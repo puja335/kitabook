@@ -30,7 +30,7 @@ public class UsersController {
       password
     );
     
-    dbConnection = new DbConnection();
+          DbConnection dbConnection = new DbConnection();
     ResultSet rs = dbConnection.retrieve(selectQuery);
     try {
       while (rs.next()) {
