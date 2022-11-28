@@ -11,15 +11,15 @@ import java.sql.*;
  * @author puja
  */
 public class UsersController {
-      DbConnection dbConnection;
-        public int updateUsers(Users users){
-        String firstname = users.getFirstName();
-        String last_name = users.getLastName();
-        String phonenum = users.getPhoneNumber();
-        String uaddress = users.getAddress();
-        String updateQuery = String.format("UPDATE users SET first_name = '%s', lastname = '%s' , phonenumber = '%s', address = '%s' WHERE phonenumber = '%s'",firstname,last_name,phonenum,uaddress);
-        dbConnection = new DbConnection();
-        int result = dbConnection.manipulate(updateQuery);
+      DbConnection dbconnection;
+        public int updateUsers(String fname,String lname, String username, String phonenum){
+//        String firstname = users.getFirstName();
+//        String last_name = users.getLastName();
+//        String phonenum = users.getPhoneNumber();
+//        String Usernamee = users.getUsername();
+        String updateQuery = String.format("UPDATE users SET first_name = '%s', lastname = '%s' , username = '%s' WHERE phonenumber = '%s'",fname,lname,username ,phonenum);
+        dbconnection = new DbConnection();
+        int result = dbconnection.manipulate(updateQuery);
         return result;
     }
         
