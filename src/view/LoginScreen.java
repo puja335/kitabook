@@ -115,9 +115,9 @@ import javax.swing.JOptionPane;
         jPanel3.add(jPanel2);
         jPanel2.setBounds(460, 30, 203, 302);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\binod\\Downloads\\image 2 (1).png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/image 2 (1).png"))); // NOI18N
         jPanel3.add(jLabel2);
-        jLabel2.setBounds(40, 30, 260, 310);
+        jLabel2.setBounds(80, 30, 260, 310);
 
         jPanel1.add(jPanel3);
         jPanel3.setBounds(80, 110, 700, 390);
