@@ -6,6 +6,7 @@ package controller;
 import database.DbConnection;
 import model.*;
 import java.sql.*;
+import javax.swing.JOptionPane;
 /**
  *
  * @author puja
@@ -32,6 +33,7 @@ public class UsersController {
     
           DbConnection dbConnection = new DbConnection();
     ResultSet rs = dbConnection.retrieve(selectQuery);
+    System.out.println(rs);
     try {
       while (rs.next()) {
         String fetchedUserName = rs.getString("username");
@@ -48,4 +50,46 @@ public class UsersController {
     }
     return false;
   }
+        
+        public int updatepass(String passw, String pnumber){
+        String updateQuery = String.format("UPDATE users SET userpassword = '%s' WHERE phonenumber = '%s'", passw, pnumber);
+        dbconnection = new DbConnection();
+        int result = dbconnection.manipulate(updateQuery);
+        return result;
+    }
+        public int validatePhone(String pnumb){
+            
+    String selectQuery = String.format(
+      "select phonenumber from users ");
+                  DbConnection dbConnection = new DbConnection();
+                   ResultSet rs = dbConnection.retrieve(selectQuery);
+                       try {
+      while (rs.next()) {
+        String fetchednumber = rs.getString("phonenumber");
+        if (pnumb.equals(fetchednumber)) {
+          return 1;
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Enter valid number.");
+        return 0;
+        }
+      }
+    } catch (Exception e) {
+      // TODO: handle exception
+      System.out.println("Error");
+      return 0;
+    }
+      return 0;
+        }
+        public int viewprofile(String fname,String lname,String usern,String pnumber){
+            String selectQuery = String.format(
+      "select * from users where username = '%s'",
+      
+      usern,
+      
+    );
+            DbConnection dbConnection = new DbConnection();
+                   ResultSet rs = dbConnection.retrieve(selectQuery);
+        }
+       
 }
