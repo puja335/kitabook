@@ -38,8 +38,14 @@ public class UsersController {
       while (rs.next()) {
         String fetchedUserName = rs.getString("username");
         String fetchedPassword = rs.getString("userpassword");
+        String fetchedid = rs.getString(Constraints.Constant.DB_USER_ID);    
+        String fetchedfname = rs.getString("first_name");
+        String fetchedlname = rs.getString("lastname");
+        String fetchednumber = rs.getString("phonenumber");
+
         System.out.println(fetchedUserName + fetchedPassword);
         if (username.equals(fetchedUserName) && password.equals(fetchedPassword)) {
+//            User loggedInUser = new User();
           return true;
         }
       }
@@ -57,6 +63,7 @@ public class UsersController {
         int result = dbconnection.manipulate(updateQuery);
         return result;
     }
+        
         public int validatePhone(String pnumb){
             
     String selectQuery = String.format(
@@ -65,7 +72,7 @@ public class UsersController {
                    ResultSet rs = dbConnection.retrieve(selectQuery);
                        try {
       while (rs.next()) {
-        String fetchednumber = rs.getString("phonenumber");
+        String fetchednumber = rs.getString(Constraints.Constant.DB_PHONE_NUMBER);
         if (pnumb.equals(fetchednumber)) {
           return 1;
         }
@@ -81,15 +88,34 @@ public class UsersController {
     }
       return 0;
         }
-        public int viewprofile(String fname,String lname,String usern,String pnumber){
+        public ResultSet viewprofile(String usern){
             String selectQuery = String.format(
-      "select * from users where username = '%s'",
-      
-      usern,
+      "select first_name,lastname, username , phonenumber from users where username = '%s'",
+     
+      usern
       
     );
+            
             DbConnection dbConnection = new DbConnection();
                    ResultSet rs = dbConnection.retrieve(selectQuery);
+//                   return 0;
+                    try{
+                        while(rs.next()){
+                       return rs; 
+                        }
+                    } catch(SQLException ex) {ex.printStackTrace();}
+                    return null;
+//                    String fname= rs.getString("fname");
         }
+        
+        public int library(String uid, String bookid, String usern){
+                    String selectQuery = String.format(
+      "select userid from users where username = '%s'",
+      
+      usern
+      
+    );
+//         insert into library userid
+        } 
        
 }

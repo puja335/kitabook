@@ -30,7 +30,6 @@ public class Reset extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        pnumber = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -38,6 +37,9 @@ public class Reset extends javax.swing.JFrame {
         newpass = new javax.swing.JPasswordField();
         confnew = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
+        pnumber1 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        newpass1 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,19 +52,18 @@ public class Reset extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(107, 70, 25));
         jLabel1.setText("Change Password");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 230, 39));
-        jPanel2.add(pnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 200, 30));
 
         jLabel3.setFont(new java.awt.Font("HP Simplified Hans", 0, 14)); // NOI18N
         jLabel3.setText("Phone Number :");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 110, 20));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 110, 20));
 
         jLabel2.setFont(new java.awt.Font("HP Simplified Hans", 0, 14)); // NOI18N
-        jLabel2.setText("New Password :");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 110, -1));
+        jLabel2.setText("Old Password :");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 110, -1));
 
         jLabel4.setFont(new java.awt.Font("HP Simplified Hans", 0, 14)); // NOI18N
         jLabel4.setText("Confirm Password :");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, 130, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 130, -1));
 
         jButton1.setText("Submit");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -71,12 +72,18 @@ public class Reset extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, -1, -1));
-        jPanel2.add(newpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 220, 200, 30));
-        jPanel2.add(confnew, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 200, 30));
+        jPanel2.add(newpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 200, 30));
+        jPanel2.add(confnew, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, 200, 30));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/giraffe.png"))); // NOI18N
         jLabel5.setText("jLabel5");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, -40, 400, 280));
+        jPanel2.add(pnumber1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 200, 30));
+
+        jLabel6.setFont(new java.awt.Font("HP Simplified Hans", 0, 14)); // NOI18N
+        jLabel6.setText("New Password :");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 110, -1));
+        jPanel2.add(newpass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 200, 30));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -169,9 +176,11 @@ public class Reset extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField newpass;
-    private javax.swing.JTextField pnumber;
+    private javax.swing.JPasswordField newpass1;
+    private javax.swing.JTextField pnumber1;
     // End of variables declaration//GEN-END:variables
 }
