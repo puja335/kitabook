@@ -171,7 +171,7 @@ import javax.swing.JOptionPane;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         String userName = tfUserName.getText();
-        String password = tfPassword.getText();
+        String password = jPasswordField1.getText();
         UsersController uc = new UsersController();
      Boolean isLogin = uc.loginUser(userName, password);
     if(Objects.equals(Boolean.TRUE, isLogin)){
