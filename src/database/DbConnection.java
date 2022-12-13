@@ -24,15 +24,25 @@ public class DbConnection {
 
         try {
 
+<<<<<<< HEAD
             String username = "sql6583234";
 
             String password = "HndgnvjVKu";
+=======
+            String username = "kitabooks";
+
+            String password = "kitabooks@123";
+>>>>>>> pujaDB
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             connection = DriverManager.getConnection(
 
+<<<<<<< HEAD
                     "jdbc:mysql://sql6.freesqldatabase.com/sql6583234",username,password);
+=======
+                    "jdbc:mysql://www.db4free.net/kitabooks",username,password);
+>>>>>>> pujaDB
 
 
 
