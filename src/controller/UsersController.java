@@ -81,15 +81,7 @@ public class UsersController {
     }
       return 0;
         }
-        public int viewprofile(String fname,String lname,String usern,String pnumber){
-            String selectQuery = String.format(
-      "select * from users where username = '%s'",
-      
-      usern,
-      
-    );
-            DbConnection dbConnection = new DbConnection();
-                   ResultSet rs = dbConnection.retrieve(selectQuery);
-        }
+       
+          
        
 }
