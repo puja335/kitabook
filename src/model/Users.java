@@ -9,6 +9,7 @@ package model;
  * @author puja
  */
 public class Users {
+    private int userid;
     private String first_name;
     private String lastname;
     private String phonenumber;
@@ -23,6 +24,14 @@ public class Users {
         this.Username = Username;
         this.Password = Password;
         this.conf_Password = conf_Password;
+    }
+    
+    public Users(int userid, String first_name, String lastname, String phonenumber, String Username){
+        this.userid=userid;
+        this.first_name = first_name;
+        this.lastname = lastname;
+        this.phonenumber = phonenumber;
+        this.Username = Username;
     }
     public void setFirstName(String FirstName){
         this.first_name = FirstName;
@@ -41,6 +50,9 @@ public class Users {
     }
     public void setconf_Password(String conf_Password){
         this.conf_Password = conf_Password;
+    }
+    public int getUserId(){
+        return this.userid;
     }
     public String getFirstName(){
         return this.first_name;

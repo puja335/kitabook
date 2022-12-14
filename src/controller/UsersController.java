@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package controller;
+import static Constraints.Constant.DB_Username;
 import database.DbConnection;
 import model.*;
 import java.sql.*;
@@ -38,11 +39,13 @@ public class UsersController {
       while (rs.next()) {
         String fetchedUserName = rs.getString("username");
         String fetchedPassword = rs.getString("userpassword");
-        String fetchedid = rs.getString(Constraints.Constant.DB_USER_ID);    
+        int fetchedid = rs.getInt(Constraints.Constant.DB_USER_ID);    
         String fetchedfname = rs.getString("first_name");
         String fetchedlname = rs.getString("lastname");
         String fetchednumber = rs.getString("phonenumber");
+        String fetched_user_name = rs.getString(DB_Username);
 
+        Constraints.Constant.loggedInUser=new Users(fetchedid,fetchedfname,fetchedlname,fetchednumber,fetched_user_name);
         System.out.println(fetchedUserName + fetchedPassword);
         if (username.equals(fetchedUserName) && password.equals(fetchedPassword)) {
 //            User loggedInUser = new User();
@@ -107,17 +110,6 @@ public class UsersController {
                     return null;
 //                    String fname= rs.getString("fname");
         }
-        
-        public int library(String uid, String bookid, String usern){
-                    String selectQuery = String.format(
-      "select userid from users where username = '%s'",
-      
-      usern
-      
-    );
-//         insert into library userid
-        } 
-    
       
       public int registerUser(Users users){
         String firstname = users.getFirstName();
