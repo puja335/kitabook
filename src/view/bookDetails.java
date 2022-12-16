@@ -6,8 +6,9 @@ package view;
 //importing package 
 import Constraints.Constant;
 import database.DbConnection;
-import java.sql.Connection;
+import java.sql.*;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 
@@ -286,8 +287,29 @@ new ReportScreen().setVisible(true);        // TODO add your handling code here:
         // TODO add your handling code here:
          String rating_ = ratingcombo.getSelectedItem().toString();
          int rating_no =Integer.parseInt(rating_);
+         int avg_rating=0;
          int book_id=101;
          int user_id=0;
+         Connection conn=DbConnection.getconnection();
+         try{
+               
+      Statement psst=conn.createStatement();
+         ResultSet rs=psst.executeQuery("select num_ratings from rating_table");
+            if(rs.next() ){
+                System.out.println("data present");
+
+                    
+//                        rating_no=rowCount+1;
+                    
+      
+//                }catch(SQLException e){}
+//                String rating_nos=rs.getString("num_ratings");
+                
+            }else{
+//                rating_no=1;
+            }
+         }
+         catch(SQLException e){System.out.println(e);}
          if(Constant.loggedInUser !=null){
          
              String users=Constant.loggedInUser.getUserId();
@@ -295,21 +317,49 @@ new ReportScreen().setVisible(true);        // TODO add your handling code here:
          
          }
       try{
-      Connection conn=DbConnection.getconnection();
-      String query="insert into rating_table(rating_count,book_name,username) value('"+rating_no+"',(select book_name from Addbook where GID='"+book_id+"'),(select username from users where userid='"+user_id+"'))";
+      
+      String query="insert into rating_table(book_id,num_ratings,book_name,username,avg_rating) value((select book_id from Addbook where GID='"+book_id+"'),'"+rating_no+"',(select book_name from Addbook where GID='"+book_id+"'),(select username from users where userid='"+user_id+"'),'"+avg_rating+"')";
       
       PreparedStatement pst=conn.prepareStatement(query);
       int value=pst.executeUpdate();
       if(value>0){
           System.out.println("Rating Sent Successfully");
           JOptionPane.showMessageDialog(null, "Rating submitted Successfully","Success",JOptionPane.INFORMATION_MESSAGE);
-
+         
       }else{
           System.out.println("error");
       }
-          
-          
+      //for rowcount
+      Statement stmt = conn.createStatement();
+
+                        // Execute a SELECT COUNT(*) query
+                        ResultSet rs1 = stmt.executeQuery("select COUNT(*) from rating_table where book_id=(select book_id from Addbook where GID='"+book_id+"' )");
+
+                        // Move to the first row of the results
+                        rs1.next();
+
+                        // Get the count of rows from the first column of the first row
+                        int rowCount = rs1.getInt(1);
+//                                   PreparedStatement ps1st=conn.prepareStatement(query11);
+                        System.out.println(rowCount);
+      //for average rating
+      Statement stmt1 = conn.createStatement();
       
+      ResultSet rs11 = stmt1.executeQuery("select SUM(num_ratings) from rating_table where book_id=(select book_id from Addbook where GID='"+book_id+"' )");
+
+                        // Move to the first row of the results
+                        rs11.next();
+
+                        // Get the count of rows from the first column of the first row
+                        int SUMCount1 = rs11.getInt(1);
+//                                   PreparedStatement ps1st=conn.prepareStatement(query11);
+                        System.out.println(SUMCount1);
+//                        rating_no=rowCount+1;
+      
+          PreparedStatement stmt12 = conn.prepareStatement(
+    "UPDATE rating_table SET avg_rating = '"+SUMCount1+"' / '"+rowCount+"' WHERE book_id = (select book_id from Addbook where GID='"+book_id+"')");
+
+stmt12.executeUpdate();
       }catch(Exception e){
           System.out.println("some error occured"+e);
       
