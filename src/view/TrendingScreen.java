@@ -28,7 +28,7 @@ public class trendingScreen extends javax.swing.JFrame {
     
         try{
             Connection conn=DbConnection.getconnection();
-            String query="select Addbook.book_id ,Addbook.book_name as Book_Name, Addbook.pdf_link as PdfLink ,Addbook.author as Author,rating_table.rating_count as Rating from rating_table  left join Addbook on Addbook.book_id=rating_table.book_id ";
+            String query="select distinct Addbook.book_id ,Addbook.book_name as Book_Name, Addbook.pdf_link as PdfLink ,Addbook.author as Author,rating_table.avg_rating as Rating from rating_table  left join Addbook on Addbook.book_id=rating_table.book_id order by avg_rating desc ";
             PreparedStatement pst=conn.prepareStatement(query);
             ResultSet rst=pst.executeQuery();
             viewtable.setModel(DbUtils.resultSetToTableModel(rst));
