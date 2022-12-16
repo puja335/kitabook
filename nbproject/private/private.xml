@@ -3,7 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Dell/Desktop/kitabook/src/model/Addbook.java</file>
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+            <file>file:/C:/Users/Nihira%20Shrestha/Desktop/kitabook/src/model/Addbook.java</file>
+            <file>file:/C:/Users/Nihira%20Shrestha/Desktop/kitabook/src/view/profile.java</file>
+            <file>file:/C:/Users/Nihira%20Shrestha/Desktop/kitabook/src/view/Reset.java</file>
+            <file>file:/C:/Users/Nihira%20Shrestha/Desktop/kitabook/src/view/TrendingScreen.java</file>
+            <file>file:/C:/Users/Nihira%20Shrestha/Desktop/kitabook/src/view/addtolibrary.java</file>
+            <file>file:/C:/Users/Nihira%20Shrestha/Desktop/kitabook/src/controller/UsersController.java</file>
+            <file>file:/C:/Users/Nihira%20Shrestha/Desktop/kitabook/src/controller/Addbookcontroller.java</file>
+            <file>file:/C:/Users/Nihira%20Shrestha/Desktop/kitabook/src/database/DbConnection.java</file>
+            <file>file:/C:/Users/Nihira%20Shrestha/Desktop/kitabook/src/Constraints/Constant.java</file>
+            <file>file:/C:/Users/Nihira%20Shrestha/Desktop/kitabook/src/view/LoginScreen.java</file>
+=======
+>>>>>>> f68ab3d2773679eb1f94b313912366a0ca6b5c71
             <file>file:/C:/Users/Dell/Desktop/kitabook/src/model/Users.java</file>
             <file>file:/C:/Users/Dell/Desktop/kitabook/src/view/dashboard.java</file>
             <file>file:/C:/Users/Dell/Desktop/kitabook/src/view/commingsoon.java</file>
@@ -11,8 +27,33 @@
             <file>file:/C:/Users/Dell/Desktop/kitabook/src/view/library.java</file>
             <file>file:/C:/Users/Dell/Desktop/kitabook/src/controller/Addbookcontroller.java</file>
             <file>file:/C:/Users/Dell/Desktop/kitabook/src/controller/UsersController.java</file>
+<<<<<<< HEAD
             <file>file:/C:/Users/Dell/Desktop/kitabook/src/Constraints/constant.java</file>
             <file>file:/C:/Users/Dell/Desktop/kitabook/src/view/LoginScreen.java</file>
+=======
+>>>>>>> 47a001550eb2fc207d4722a8a464316dc5cc04a0
+=======
+            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/controller/Addbookcontroller.java</file>
+            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/cat.png</file>
+            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/LoginScreen.java</file>
+            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/TrendingScreen.java</file>
+            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/AddBookScreen.java</file>
+            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/controller/UsersController.java</file>
+            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/ViewBookScreen.java</file>
+            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/arrow-back-circle-outline%20(1).svg</file>
+            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/fsf%201%20(1).png</file>
+            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/database/DbConnection.java</file>
+            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/model/Users.java</file>
+            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/forgotscreen.java</file>
+            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/profile.java</file>
+            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/awd%202%20(1).png</file>
+            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/Reset.java</file>
+            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/Cutepuja.png</file>
+            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/AddBook/AddBook.java</file>
+            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/awd%202%20(2).png</file>
+            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/addtolibrary.java</file>
+>>>>>>> pujaDB
+>>>>>>> f68ab3d2773679eb1f94b313912366a0ca6b5c71
         </group>
     </open-files>
 </project-private>
