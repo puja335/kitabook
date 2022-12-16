@@ -13,12 +13,12 @@ import java.net.URISyntaxException;
  *
  * @author raich
  */
-public class Contact_detail extends javax.swing.JFrame {
+public class contact_detail extends javax.swing.JFrame {
 
     /**
      * Creates new form contact_detail
      */
-    public Contact_detail() {
+    public contact_detail() {
         initComponents();
     }
 
@@ -139,9 +139,9 @@ public class Contact_detail extends javax.swing.JFrame {
 
     private void btn_fbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_fbActionPerformed
         // TODO add your handling code here:
-        Desktop Contact_detail = Desktop.getDesktop();
+        Desktop contact_detail = Desktop.getDesktop();
         try{
-            Contact_detail.browse(new URI("https://www.facebook.com/softwarica.nepal"));
+            contact_detail.browse(new URI("https://www.facebook.com/softwarica.nepal"));
         }
         catch(IOException err){
 
@@ -168,13 +168,13 @@ public class Contact_detail extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Contact_detail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(contact_detail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Contact_detail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(contact_detail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Contact_detail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(contact_detail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Contact_detail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(contact_detail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -184,7 +184,7 @@ public class Contact_detail extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Contact_detail().setVisible(true);
+                new contact_detail().setVisible(true);
             }
         });
     }
