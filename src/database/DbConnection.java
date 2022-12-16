@@ -34,7 +34,6 @@ public class DbConnection {
 
             connection = DriverManager.getConnection(
 
-
                     "jdbc:mysql://www.db4free.net:3306/kitabooks",username,password);
 
 

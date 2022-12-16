@@ -24,17 +24,26 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
 <<<<<<< HEAD
+<<<<<<< HEAD
           <Component id="jPanel2" alignment="1" pref="995" max="32767" attributes="0"/>
 =======
           <Component id="jPanel2" alignment="0" pref="1132" max="32767" attributes="0"/>
 >>>>>>> pujaDB
+=======
+          <Component id="jPanel2" alignment="1" pref="1080" max="32767" attributes="0"/>
+>>>>>>> f704c4e3e90e1e2bedbfc2bd558a76309053d0e8
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
+<<<<<<< HEAD
               <Component id="jPanel2" min="-2" pref="697" max="-2" attributes="0"/>
 <<<<<<< HEAD
+=======
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel2" min="-2" pref="650" max="-2" attributes="0"/>
+>>>>>>> f704c4e3e90e1e2bedbfc2bd558a76309053d0e8
               <EmptySpace max="32767" attributes="0"/>
 =======
               <EmptySpace min="0" pref="363" max="32767" attributes="0"/>
@@ -96,6 +105,7 @@
                       <Component id="jButton7" alignment="0" min="-2" pref="221" max="-2" attributes="0"/>
                       <Component id="jLabel9" min="-2" pref="206" max="-2" attributes="0"/>
                   </Group>
+<<<<<<< HEAD
                   <EmptySpace pref="68" max="32767" attributes="0"/>
 =======
                       <Group type="102" alignment="0" attributes="0">
@@ -124,6 +134,9 @@
                   <Component id="jLabel12" min="-2" pref="151" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
 >>>>>>> pujaDB
+=======
+                  <EmptySpace pref="153" max="32767" attributes="0"/>
+>>>>>>> f704c4e3e90e1e2bedbfc2bd558a76309053d0e8
               </Group>
           </Group>
         </DimensionLayout>
@@ -198,9 +211,13 @@
                       </Group>
                   </Group>
 <<<<<<< HEAD
+<<<<<<< HEAD
                   <EmptySpace pref="22" max="32767" attributes="0"/>
 =======
 >>>>>>> pujaDB
+=======
+                  <EmptySpace max="32767" attributes="0"/>
+>>>>>>> f704c4e3e90e1e2bedbfc2bd558a76309053d0e8
               </Group>
               <Component id="jPanel1" alignment="0" min="-2" pref="669" max="-2" attributes="0"/>
           </Group>
@@ -376,6 +393,9 @@
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

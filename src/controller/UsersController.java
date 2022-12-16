@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package controller;
-
+import static Constraints.Constant.DB_Username;
 import database.DbConnection;
 import model.*;
 import java.sql.*;
@@ -38,11 +38,13 @@ public class UsersController {
       while (rs.next()) {
         String fetchedUserName = rs.getString("username");
         String fetchedPassword = rs.getString("userpassword");
-        String fetchedid = rs.getString(Constraints.Constant.DB_USER_ID);
+        int fetchedid = rs.getInt(Constraints.Constant.DB_USER_ID);    
         String fetchedfname = rs.getString("first_name");
         String fetchedlname = rs.getString("lastname");
         String fetchednumber = rs.getString("phonenumber");
+        String fetched_user_name = rs.getString(DB_Username);
 
+        Constraints.Constant.loggedInUser=new Users(fetchedid,fetchedfname,fetchedlname,fetchednumber,fetched_user_name);
         System.out.println(fetchedUserName + fetchedPassword);
         if (username.equals(fetchedUserName) && password.equals(fetchedPassword)) {
           // User loggedInUser = new User();
@@ -85,8 +87,43 @@ public class UsersController {
       System.out.println("Error");
       return 0;
     }
-    return 0;
-  }
+      return 0;
+        }
+        public ResultSet viewprofile(String usern){
+            String selectQuery = String.format(
+      "select first_name,lastname, username , phonenumber from users where username = '%s'",
+     
+      usern
+      
+    );
+            
+            DbConnection dbConnection = new DbConnection();
+                   ResultSet rs = dbConnection.retrieve(selectQuery);
+//                   return 0;
+                    try{
+                        while(rs.next()){
+                       return rs; 
+                        }
+                    } catch(SQLException ex) {ex.printStackTrace();}
+                    return null;
+//                    String fname= rs.getString("fname");
+        }
+      
+      public int registerUser(Users users){
+        String firstname = users.getFirstName();
+        String last_name = users.getLastName();
+        String phonenum = users.getPhoneNumber();
+        String username = users.getUsername();
+        String password = users.getPassword();
+        String cPassword = users.getconf_Password();
+        dbconnection = new DbConnection();
+        String insertQuery = String.format("INSERT INTO users(first_name,lastname,phonenumber,username,userpassword,confpassword) VALUES('%s','%s','%s','%s','%s','%s')",firstname,last_name,phonenum,username,password,cPassword);
+          System.out.println(insertQuery);
+        int result = dbconnection.manipulate(insertQuery);
+        return result;
+      }
+       
+}
 
   public ResultSet viewprofile(String usern) {
     String selectQuery = String.format(
