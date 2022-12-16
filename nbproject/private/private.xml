@@ -3,10 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Dell/Desktop/kitabook/src/model/Addbook.java</file>
             <file>file:/C:/Users/Dell/Desktop/kitabook/src/model/Users.java</file>
-            <file>file:/C:/Users/Dell/Desktop/kitabook/src/view/signup.java</file>
+            <file>file:/C:/Users/Dell/Desktop/kitabook/src/view/dashboard.java</file>
+            <file>file:/C:/Users/Dell/Desktop/kitabook/src/view/commingsoon.java</file>
             <file>file:/C:/Users/Dell/Desktop/kitabook/src/database/DbConnection.java</file>
+            <file>file:/C:/Users/Dell/Desktop/kitabook/src/view/library.java</file>
+            <file>file:/C:/Users/Dell/Desktop/kitabook/src/controller/Addbookcontroller.java</file>
             <file>file:/C:/Users/Dell/Desktop/kitabook/src/controller/UsersController.java</file>
+            <file>file:/C:/Users/Dell/Desktop/kitabook/src/Constraints/constant.java</file>
+            <file>file:/C:/Users/Dell/Desktop/kitabook/src/view/LoginScreen.java</file>
         </group>
     </open-files>
 </project-private>
