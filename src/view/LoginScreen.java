@@ -227,18 +227,17 @@ import javax.swing.JOptionPane;
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
-<<<<<<< HEAD
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         new Reset().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
-=======
+
     private void tfUserNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfUserNameFocusGained
         // TODO add your handling code here:
         tfUserName.setText("");
     }//GEN-LAST:event_tfUserNameFocusGained
->>>>>>> pujaDB
+
 
     /**
      * @param args the command line arguments

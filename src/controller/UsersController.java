@@ -129,7 +129,7 @@ public class UsersController {
     String cPassword = users.getconf_Password();
     dbconnection = new DbConnection();
     String insertQuery = String.format(
-        "INSERT INTO Users(first_name,lastname,phonenumber,username,userpassword,confpassword) VALUES('%s','%s','%s','%s','%s','%s')",
+        "INSERT INTO users(first_name,lastname,phonenumber,username,userpassword) VALUES('%s','%s','%s','%s','%s')",
         firstname, last_name, phonenum, username, password, cPassword);
     System.out.println(insertQuery);
     int result = dbconnection.manipulate(insertQuery);
