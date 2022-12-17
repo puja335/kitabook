@@ -89,7 +89,13 @@ public class UsersController {
     }
       return 0;
         }
-        public ResultSet viewprofile(String usern){
+
+    /**
+     *
+     * @param usern
+     * @return
+     */
+    public ResultSet viewprofile(String usern){
             String selectQuery = String.format(
       "select first_name,lastname, username , phonenumber from users where username = '%s'",
      
@@ -123,7 +129,7 @@ public class UsersController {
         return result;
       }
        
-}
+
 
   public ResultSet viewprofile(String usern) {
     String selectQuery = String.format(
