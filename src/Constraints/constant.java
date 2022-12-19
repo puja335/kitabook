@@ -10,7 +10,7 @@ import model.Users;
  *
  * @author Nihira Shrestha
  */
-public class constant {
+public class Constant {
     public static String DB_USER_ID = "userid";
     public static String DB_FIRST_NAME = "first_name";
     public static String DB_PHONE_NUMBER = "phonenumber";
