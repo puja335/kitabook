@@ -5,10 +5,16 @@
 package view.AddBook;
 
 import controller.Addbookcontroller;
+import database.DbConnection;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import model.Addbook;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -37,7 +43,6 @@ public class AddBook extends javax.swing.JFrame {
         bookname = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        genre = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         more = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -51,6 +56,8 @@ public class AddBook extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         pdflink = new javax.swing.JTextField();
+        genre_dd = new javax.swing.JComboBox<>();
+        lblgenre = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,8 +78,6 @@ public class AddBook extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
         jLabel3.setText("Genre");
-
-        genre.setText("love");
 
         jLabel4.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
         jLabel4.setText("More about book");
@@ -179,6 +184,20 @@ public class AddBook extends javax.swing.JFrame {
             }
         });
 
+        genre_dd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Click To Select Genre" }));
+        genre_dd.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                genre_ddMouseClicked(evt);
+            }
+        });
+        genre_dd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                genre_ddActionPerformed(evt);
+            }
+        });
+
+        lblgenre.setOpaque(true);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -193,12 +212,12 @@ public class AddBook extends javax.swing.JFrame {
                                 .addComponent(more, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel1)
                                     .addComponent(jLabel3)
-                                    .addComponent(genre, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(bookname, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(bookname, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                                    .addComponent(genre_dd, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(104, 104, 104)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -212,16 +231,17 @@ public class AddBook extends javax.swing.JFrame {
                                             .addComponent(jLabel2))
                                         .addContainerGap(60, Short.MAX_VALUE))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(153, 153, 153)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(141, 141, 141)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(275, 275, 275)
-                                .addComponent(jLabel5)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(153, 153, 153)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(141, 141, 141)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(275, 275, 275)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblgenre, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,8 +253,13 @@ public class AddBook extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bookname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(41, 41, 41)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lblgenre, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -242,14 +267,15 @@ public class AddBook extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(genre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(author, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                        .addComponent(author, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(15, 15, 15)
+                        .addComponent(genre_dd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -297,21 +323,52 @@ public class AddBook extends javax.swing.JFrame {
 //        System.out.println(userLeDeKoPDFLink+userLeDekoBookName);
         String bname = bookname.getText();  //int also will be in string when it is in text field
         String bauthor = author.getText();
-        String bgenre = genre.getText();
+        String bgenre = genre_dd.getSelectedItem().toString();
         String bpdflink = pdflink.getText();
         String bmore = more.getText();
-        
+        if(genre_dd.getSelectedItem()=="Fiction"){
+            
+                lblgenre.setText("101");
+//                genre_str="101";
+                 
+                        
+            }else if(genre_dd.getSelectedItem()=="Mystery"){
+            
+                lblgenre.setText("102");
+            } if(genre_dd.getSelectedItem()=="Fantasy"){
+            
+                lblgenre.setText("103");
+            } if(genre_dd.getSelectedItem()=="Thriller"){
+            
+                lblgenre.setText("104");
+            } if(genre_dd.getSelectedItem()=="Romance"){
+            
+                lblgenre.setText("105");
+            } if(genre_dd.getSelectedItem()=="Horror"){
+            
+                lblgenre.setText("106");}
         if (bname.isEmpty() || bauthor.isEmpty() || bgenre.isEmpty() || bpdflink.isEmpty()|| bmore.isEmpty()){
         // error dekhau 
         JOptionPane.showMessageDialog(this, "Field Cnnot be empty", "Error", JOptionPane.ERROR_MESSAGE);
         } else{
-            Addbook newBook = new Addbook(bname,bauthor,bgenre,bpdflink, bmore);
-            Addbookcontroller sc = new Addbookcontroller();
-            int result = sc.insertbook(newBook);
-            if(result>0){
-                    JOptionPane.showMessageDialog(this, "User Inserted", "Success", JOptionPane.INFORMATION_MESSAGE);
-
-            }
+            
+//            try{
+//                String genre_str=new String();
+//             lbl_genre= new JLabel("genre");           
+            
+//            }}catch(Exception e){ System.out.println(e);}
+            
+            Addbook newBook = new Addbook(bname,bauthor,bpdflink,bmore, lblgenre.getText());
+            System.out.println(lblgenre.getText());
+            System.out.println();
+//            System.out.println(genre_dd.getSelectedItem());
+            
+//            Addbookcontroller sc = new Addbookcontroller();
+//            int result = sc.insertbook(newBook);
+//            if(result>0){
+//                    JOptionPane.showMessageDialog(this, "User Inserted", "Success", JOptionPane.INFORMATION_MESSAGE);
+//
+//            }
             
     }
 
@@ -332,6 +389,51 @@ public class AddBook extends javax.swing.JFrame {
     private void pdflinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pdflinkActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_pdflinkActionPerformed
+
+    private void genre_ddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genre_ddActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_genre_ddActionPerformed
+
+    private void genre_ddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_genre_ddMouseClicked
+
+ try{
+            Connection conn=DbConnection.getconnection();
+            String query="select distinct genre from genre";
+            PreparedStatement pst=conn.prepareStatement(query);
+            ResultSet rst=pst.executeQuery();
+            while (rst.next()){
+                String item=(rst.getString("genre"));
+            genre_dd.addItem(item);}
+//            viewtable.setModel(DbUtils.resultSetToTableModel(rst));
+            
+        }catch(SQLException e){
+            System.out.println(e);
+        }        // TODO add your handling code here:
+    
+        String item=genre_dd.getSelectedItem().toString();
+        if(item=="Fiction"){
+            
+                lblgenre.setText("101");
+//                genre_str="101";
+                 
+                        
+            }else if(genre_dd.getSelectedItem()=="Mystery"){
+            
+                lblgenre.setText("102");
+            } if(genre_dd.getSelectedItem()=="Fantasy"){
+            
+                lblgenre.setText("103");
+            } if(genre_dd.getSelectedItem()=="Thriller"){
+            
+                lblgenre.setText("104");
+            } if(genre_dd.getSelectedItem()=="Romance"){
+            
+                lblgenre.setText("105");
+            } if(genre_dd.getSelectedItem()=="Horror"){
+            
+                lblgenre.setText("106");}
+        // TODO add your handling code here:
+    }//GEN-LAST:event_genre_ddMouseClicked
 
     /**
      * @param args the command line arguments
@@ -370,7 +472,7 @@ public class AddBook extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField author;
     private javax.swing.JTextField bookname;
-    private javax.swing.JTextField genre;
+    private javax.swing.JComboBox<String> genre_dd;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -385,7 +487,9 @@ public class AddBook extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblgenre;
     private javax.swing.JTextField more;
     private javax.swing.JTextField pdflink;
     // End of variables declaration//GEN-END:variables
+//    public javax.swing.JLabel lbl_genre;
 }

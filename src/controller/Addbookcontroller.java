@@ -29,10 +29,10 @@ public class Addbookcontroller{
         int book_id = book.getBook_id();
         String book_name = book.getBook_name();
         String author = book.getAuthor();
-        String genre = book.getGenre();
+        String gid = book.getgid();
         String pdf_link = book.getPdf_link();
         String more = book.getMore();
-        String insertQuery = String.format ("INSERT INTO Addbook VAlUES(%d,'%s', '%s', '%s', '%s', '%s')",book_id,book_name,author, genre,pdf_link, more);
+        String insertQuery = String.format ("INSERT INTO Addbook VAlUES(%d,'%s', '%s', '%s', '%s', '%s')",book_id,book_name,author,pdf_link, more,gid);
         System.out.println(insertQuery);
         dbconnection = new DbConnection();
         int result = dbconnection.manipulate(insertQuery); // manipulate in datavase

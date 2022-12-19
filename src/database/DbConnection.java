@@ -57,7 +57,46 @@ public class DbConnection {
         }
 
     }
+public static Connection getconnection(){
 
+    try {
+
+
+            String username = "kitabooks";
+
+            String password = "kitabooks@123";
+
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+           Connection connection = DriverManager.getConnection(
+
+                    "jdbc:mysql://www.db4free.net:3306/kitabooks",username,password);
+
+
+
+                    if(connection!=null){
+
+                        System.out.println("Connected to database");
+                        return connection;
+
+                    }else{
+
+                        System.out.println("Error connecting to database");
+
+                    }
+
+            
+
+        }catch (Exception e){
+
+            e.printStackTrace();
+
+        }
+    return null;
+
+
+}
 
 
     // Via the use of sql query
@@ -108,7 +147,7 @@ public class DbConnection {
 
     public static void main(String[] args) {
 
-        new DbConnection();
+         DbConnection.getconnection();
 
         
 

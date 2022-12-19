@@ -23,6 +23,7 @@ public class Addbook {
   private String genre;
   private String pdf_link;
   private String more;
+  private String gid;
 
    // creation of public constructor
     public Addbook(
@@ -45,13 +46,14 @@ public class Addbook {
     public Addbook(
     String book_name,
     String author,
-    String genre,
-    String pdf_link,
-    String more
+    String pdf_link, 
+    String more,
+    String gid
+            
   ) {
     this.book_name = book_name;
     this.author = author;
-    this.genre = genre;
+    this.gid = gid;
     this.pdf_link = pdf_link;
     this.more = more;
   }
@@ -62,6 +64,13 @@ public class Addbook {
 
     public void setBook_id(int book_id) {
         this.book_id = book_id;
+    }
+    public String getgid() {
+        return gid;
+    }
+
+    public void gid(String gid) {
+        this.gid = gid;
     }
 
     public String getBook_name() {

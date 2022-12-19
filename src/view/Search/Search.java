@@ -4,6 +4,10 @@
  */
 package view.Search;
 
+import database.DbConnection;
+import java.sql.*;
+import net.proteanit.sql.DbUtils;
+
 /**
  *
  * @author raich
@@ -19,10 +23,15 @@ public class Search extends javax.swing.JFrame {
     public void viewbook(){
     
         try{
-        
-            String query="select addbook.book_id ,addbook.book_name as Book_Name, addbook.pdf_link as PdfLink ,addbook.author as Author,genre.genre from addbook  left join genre on addbook.gid=genre.gid ";
+            Connection conn=DbConnection.getconnection();
+            String query="select Addbook.book_id ,Addbook.book_name as Book_Name, Addbook.pdf_link as PdfLink ,Addbook.author as Author,genre.genre from Addbook  left join genre on Addbook.gid=genre.gid ";
+            PreparedStatement pst=conn.prepareStatement(query);
+            ResultSet rst=pst.executeQuery();
+            viewtable.setModel(DbUtils.resultSetToTableModel(rst));
             
-        }catch(Exception e){}
+        }catch(SQLException e){
+            System.out.println(e);
+        }
     }
 
     /**
@@ -41,12 +50,17 @@ public class Search extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        tf_search = new javax.swing.JTextField();
         search_btn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        viewtable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(254, 242, 230));
 
@@ -113,25 +127,30 @@ public class Search extends javax.swing.JFrame {
                 .addContainerGap(103, Short.MAX_VALUE))
         );
 
-        jTextField1.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField1.setText("                   Search for book");
-        jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
+        tf_search.setBackground(new java.awt.Color(204, 204, 204));
+        tf_search.setText("                   Search for book");
+        tf_search.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                jTextField1FocusGained(evt);
+                tf_searchFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                jTextField1FocusLost(evt);
+                tf_searchFocusLost(evt);
             }
         });
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        tf_search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                tf_searchActionPerformed(evt);
             }
         });
 
         search_btn.setText("🔍");
+        search_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_btnActionPerformed(evt);
+            }
+        });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        viewtable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -150,7 +169,7 @@ public class Search extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(viewtable);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -161,7 +180,7 @@ public class Search extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 187, Short.MAX_VALUE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tf_search, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(search_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(34, 34, 34)
@@ -179,7 +198,7 @@ public class Search extends javax.swing.JFrame {
                 .addGap(60, 60, 60)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tf_search, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(search_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(35, 35, 35)
@@ -221,18 +240,35 @@ public class Search extends javax.swing.JFrame {
         // ñTODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void tf_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_searchActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_tf_searchActionPerformed
 
-    private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
+    private void tf_searchFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf_searchFocusGained
         // TODO add your handling code here:
-        jTextField1.setText("");
-    }//GEN-LAST:event_jTextField1FocusGained
+        tf_search.setText("");
+    }//GEN-LAST:event_tf_searchFocusGained
 
-    private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
+    private void tf_searchFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf_searchFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1FocusLost
+    }//GEN-LAST:event_tf_searchFocusLost
+
+    private void search_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_btnActionPerformed
+     try{
+            Connection conn=DbConnection.getconnection();
+            String query="select Addbook.book_id ,Addbook.book_name as Book_Name, Addbook.pdf_link as PdfLink ,Addbook.author as Author,genre.genre from Addbook  left join genre on Addbook.gid=genre.gid where Addbook.book_name = '"+tf_search.getText()+"'";
+            PreparedStatement pst=conn.prepareStatement(query);
+            ResultSet rst=pst.executeQuery();
+            viewtable.setModel(DbUtils.resultSetToTableModel(rst));
+            
+        }catch(SQLException e){
+            System.out.println(e);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_search_btnActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+viewbook();        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -279,8 +315,8 @@ public class Search extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton search_btn;
+    private javax.swing.JTextField tf_search;
+    private javax.swing.JTable viewtable;
     // End of variables declaration//GEN-END:variables
 }
