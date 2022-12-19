@@ -88,7 +88,6 @@ public class UsersController {
     }
       return 0;
         }
-<<<<<<< HEAD
         public ResultSet viewprofile(String usern){
             String selectQuery = String.format(
       "select first_name,lastname, username , phonenumber from users where username = '%s'",
@@ -116,6 +115,7 @@ public class UsersController {
       usern
       
     );
+    return 1;
 //         insert into library userid
         } 
     
@@ -133,10 +133,6 @@ public class UsersController {
         int result = dbconnection.manipulate(insertQuery);
         return result;
       }
-=======
-       
-          
->>>>>>> pujaDB
        
 }
 
