@@ -4,6 +4,8 @@
  */
 package Constraints;
 
+import model.Users;
+
 /**
  *
  * @author Nihira Shrestha
@@ -15,5 +17,7 @@ public class Constant {
     public static String DB_Password = "userpassword";
     public static String DB_Lastname = "lastname";
     public static String DB_Username = "username";
+    public static Users loggedInUser;
+    
    
 }

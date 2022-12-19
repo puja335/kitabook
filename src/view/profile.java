@@ -9,6 +9,7 @@ import view.LoginScreen;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Nihira Shrestha
@@ -46,7 +47,7 @@ public class profile extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         fname = new javax.swing.JTextField();
         Lname = new javax.swing.JTextField();
-        username = new javax.swing.JTextField();
+        uname = new javax.swing.JTextField();
         number = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -54,7 +55,7 @@ public class profile extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
+        name = new javax.swing.JLabel();
 
         jButton1.setText("home");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -91,6 +92,7 @@ public class profile extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(235, 219, 203));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1080, 650));
 
         jPanel2.setBackground(new java.awt.Color(218, 156, 125));
         jPanel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -153,6 +155,11 @@ public class profile extends javax.swing.JFrame {
         jButton8.setBorder(null);
         jButton8.setBorderPainted(false);
         jButton8.setContentAreaFilled(false);
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -216,11 +223,11 @@ public class profile extends javax.swing.JFrame {
             }
         });
 
-        username.setBackground(new java.awt.Color(225, 206, 182));
-        username.setText("Username");
-        username.addActionListener(new java.awt.event.ActionListener() {
+        uname.setBackground(new java.awt.Color(225, 206, 182));
+        uname.setText("Username");
+        uname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernameActionPerformed(evt);
+                unameActionPerformed(evt);
             }
         });
 
@@ -248,8 +255,8 @@ public class profile extends javax.swing.JFrame {
             }
         });
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
-        jLabel10.setText("Rachel Green");
+        name.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
+        name.setText("Rachel Green");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -263,10 +270,10 @@ public class profile extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(fname, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)
-                                .addComponent(username))
+                                .addComponent(uname))
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -289,7 +296,7 @@ public class profile extends javax.swing.JFrame {
                 .addGap(112, 112, 112)
                 .addComponent(jLabel3)
                 .addGap(9, 9, 9)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(52, 52, 52)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -307,7 +314,7 @@ public class profile extends javax.swing.JFrame {
                         .addComponent(jLabel5)))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(uname, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(number, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(69, 69, 69)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -319,11 +326,11 @@ public class profile extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1082, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 652, Short.MAX_VALUE)
         );
 
         pack();
@@ -342,24 +349,10 @@ public class profile extends javax.swing.JFrame {
 
     private void LnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LnameActionPerformed
         // TODO add your handling code here:
-        String fetched_last_name=Constraints.Constant.DB_Lastname;
-        Lname.setText(fetched_last_name);
     }//GEN-LAST:event_LnameActionPerformed
 
     private void fnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fnameActionPerformed
         // TODO add your handling code here:
-         String fetched_first_name=Constraints.Constant.DB_FIRST_NAME;
-//        String username = Constraints.Constant.DB_Username;
-//        UsersController sc = new UsersController();
-//        ResultSet rs = sc.viewprofile(username);
-//        try {
-//            while (rs.next()){
-//                fetched_first_name= rs.getString(Constraints.Constant.DB_FIRST_NAME);
-//            }
-//        } catch (SQLException ex) {
-//            Logger.getLogger(profile.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-        fname.setText(fetched_first_name);
     }//GEN-LAST:event_fnameActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -367,25 +360,38 @@ public class profile extends javax.swing.JFrame {
         String first_name = fname.getText(); 
         String lastname = Lname.getText();
         String phonenumber = number.getText();
-        String Usernamee = username.getText();
+        String Usernamee = uname.getText();
+        System.out.print(lastname);
         UsersController sc = new UsersController();
-        int updatedUsers = sc.updateUsers(first_name, lastname, Usernamee,phonenumber);
-        System.out.println(updatedUsers);
-//        sc.viewprofile();
+         
+        if (first_name.isEmpty() || lastname.isEmpty() || phonenumber.isEmpty() || Usernamee.isEmpty()){
+        // error dekhau 
+        JOptionPane.showMessageDialog(this, "Field Cnnot be empty", "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+            int updatedUsers = sc.updateUsers(first_name, lastname, Usernamee,phonenumber);
+            System.out.println(updatedUsers);}
+//        sc.viewprofile();}
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
+    private void unameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_usernameActionPerformed
+    }//GEN-LAST:event_unameActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-        
+        String firstName = Constraints.Constant.loggedInUser.getFirstName();
+        fname.setText(firstName);
+        String lastname = Constraints.Constant.loggedInUser.getLastName();
+        Lname.setText(lastname);
+        String username = Constraints.Constant.loggedInUser.getUsername();
+        uname.setText(username);
+        String phone = Constraints.Constant.loggedInUser.getPhoneNumber();
+        number.setText(phone); 
+        name.setText(firstName + " " + lastname); 
     }//GEN-LAST:event_formWindowOpened
 
     private void fnameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fnameFocusGained
-        String fetched_last_name=Constraints.Constant.DB_Lastname;
-        Lname.setText(fetched_last_name);
+       
     }//GEN-LAST:event_fnameFocusGained
 
     private void fnameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fnameMouseClicked
@@ -414,6 +420,25 @@ public class profile extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+            int n = JOptionPane.showConfirmDialog(  
+                null,
+                "Are you sure you want to logout?" ,
+                "Warning",
+                JOptionPane.YES_NO_OPTION);
+
+      if(n == JOptionPane.YES_OPTION)
+      {
+          new landingScreen().setVisible(true);
+        this.setVisible(false);
+      }
+      else
+      {
+          this.setVisible(true);
+      }
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -464,7 +489,6 @@ public class profile extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -474,7 +498,8 @@ public class profile extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel name;
     private javax.swing.JTextField number;
-    private javax.swing.JTextField username;
+    private javax.swing.JTextField uname;
     // End of variables declaration//GEN-END:variables
 }
