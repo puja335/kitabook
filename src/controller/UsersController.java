@@ -115,7 +115,7 @@ public class UsersController {
       
       usern
       
-    );
+    );return 1;
 //         insert into library userid
         } 
     
@@ -133,9 +133,7 @@ public class UsersController {
         int result = dbconnection.manipulate(insertQuery);
         return result;
       }
-=======
        
           
->>>>>>> pujaDB
        
 }
