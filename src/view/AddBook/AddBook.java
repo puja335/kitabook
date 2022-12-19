@@ -318,57 +318,47 @@ public class AddBook extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-//        String userLeDekoBookName = bookname.getText();
-//        String userLeDeKoPDFLink = author.getText();
-//        System.out.println(userLeDeKoPDFLink+userLeDekoBookName);
         String bname = bookname.getText();  //int also will be in string when it is in text field
         String bauthor = author.getText();
         String bgenre = genre_dd.getSelectedItem().toString();
         String bpdflink = pdflink.getText();
         String bmore = more.getText();
-        if(genre_dd.getSelectedItem()=="Fiction"){
+        
+        String genre_id="";
+        if("Fiction".equals(genre_dd.getSelectedItem().toString())){
             
-                lblgenre.setText("101");
-//                genre_str="101";
-                 
-                        
-            }else if(genre_dd.getSelectedItem()=="Mystery"){
+                genre_id=("101");
+            }else if("Mystery".equals(genre_dd.getSelectedItem().toString())){
             
-                lblgenre.setText("102");
-            } if(genre_dd.getSelectedItem()=="Fantasy"){
+                genre_id=("102");
+            }else if("Fantasy".equals(genre_dd.getSelectedItem().toString())){
             
-                lblgenre.setText("103");
-            } if(genre_dd.getSelectedItem()=="Thriller"){
+                genre_id=("103");
+            }else if("Thriller".equals(genre_dd.getSelectedItem().toString())){
             
-                lblgenre.setText("104");
-            } if(genre_dd.getSelectedItem()=="Romance"){
+                genre_id=("104");
+            }else if("Romance".equals(genre_dd.getSelectedItem().toString())){
             
-                lblgenre.setText("105");
-            } if(genre_dd.getSelectedItem()=="Horror"){
+                genre_id=("105");
+            }else if("horror".equals(genre_dd.getSelectedItem().toString())){
             
-                lblgenre.setText("106");}
+                genre_id=("106");
+            }
+            
         if (bname.isEmpty() || bauthor.isEmpty() || bgenre.isEmpty() || bpdflink.isEmpty()|| bmore.isEmpty()){
         // error dekhau 
         JOptionPane.showMessageDialog(this, "Field Cnnot be empty", "Error", JOptionPane.ERROR_MESSAGE);
         } else{
             
-//            try{
-//                String genre_str=new String();
-//             lbl_genre= new JLabel("genre");           
-            
-//            }}catch(Exception e){ System.out.println(e);}
-            
-            Addbook newBook = new Addbook(bname,bauthor,bpdflink,bmore, lblgenre.getText());
+            Addbook newBook = new Addbook(bname,bauthor,bpdflink,bmore, genre_id);
             System.out.println(lblgenre.getText());
-            System.out.println();
-//            System.out.println(genre_dd.getSelectedItem());
-            
-//            Addbookcontroller sc = new Addbookcontroller();
-//            int result = sc.insertbook(newBook);
-//            if(result>0){
-//                    JOptionPane.showMessageDialog(this, "User Inserted", "Success", JOptionPane.INFORMATION_MESSAGE);
-//
-//            }
+            System.out.println(genre_id);
+            Addbookcontroller sc = new Addbookcontroller();
+            int result = sc.insertbook(newBook);
+            if(result>0){
+                    JOptionPane.showMessageDialog(this, "Book Added Successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+
+            }
             
     }
 
