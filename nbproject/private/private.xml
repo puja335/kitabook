@@ -3,25 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/controller/Addbookcontroller.java</file>
-            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/cat.png</file>
-            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/LoginScreen.java</file>
-            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/TrendingScreen.java</file>
-            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/AddBookScreen.java</file>
-            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/controller/UsersController.java</file>
-            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/ViewBookScreen.java</file>
-            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/arrow-back-circle-outline%20(1).svg</file>
-            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/fsf%201%20(1).png</file>
-            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/database/DbConnection.java</file>
-            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/model/Users.java</file>
-            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/forgotscreen.java</file>
-            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/profile.java</file>
-            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/awd%202%20(1).png</file>
-            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/Reset.java</file>
-            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/Cutepuja.png</file>
-            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/AddBook/AddBook.java</file>
-            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/awd%202%20(2).png</file>
-            <file>file:/C:/Users/binod/Desktop/final%20project/KitaBook/src/view/addtolibrary.java</file>
+            <file>file:/C:/Users/binod/Desktop/final_project/KitaBook/src/view/TrendingScreen.java</file>
+            <file>file:/C:/Users/binod/Desktop/final_project/KitaBook/src/database/DbConnection.java</file>
+            <file>file:/C:/Users/binod/Desktop/final_project/KitaBook/src/Constraints/Constant.java</file>
+            <file>file:/C:/Users/binod/Desktop/final_project/KitaBook/src/view/profile.java</file>
+            <file>file:/C:/Users/binod/Desktop/final_project/KitaBook/src/view/AddBookScreen.java</file>
+            <file>file:/C:/Users/binod/Desktop/final_project/KitaBook/src/model/Users.java</file>
+            <file>file:/C:/Users/binod/Desktop/final_project/KitaBook/src/view/LoginScreen.java</file>
+            <file>file:/C:/Users/binod/Desktop/final_project/KitaBook/src/model/Rating.java</file>
+            <file>file:/C:/Users/binod/Desktop/final_project/KitaBook/src/view/addtolibrary.java</file>
+            <file>file:/C:/Users/binod/Desktop/final_project/KitaBook/src/controller/UsersController.java</file>
         </group>
     </open-files>
 </project-private>

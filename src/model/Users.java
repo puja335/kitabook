@@ -9,10 +9,19 @@ package model;
  * @author puja
  */
 public class Users {
+    private String user_id;
     private String first_name;
     private String lastname;
     private String phonenumber;
     private String address;
+    
+    public Users(String user_id, String first_name, String lastname, String phonenumber, String address){
+        this.user_id=user_id;
+        this.first_name = first_name;
+        this.lastname = lastname;
+        this.phonenumber = phonenumber;
+        this.address = address;
+    }
     
     public Users(String first_name, String lastname, String phonenumber, String address){
         this.first_name = first_name;
@@ -20,6 +29,10 @@ public class Users {
         this.phonenumber = phonenumber;
         this.address = address;
     }
+    public void setUserId(String user_id){
+        this.user_id = user_id;
+    }
+    
     public void setFirstName(String FirstName){
         this.first_name = FirstName;
     }
@@ -32,6 +45,11 @@ public class Users {
     public void setAddress(String Address){
         this.address = Address;
     }
+    
+    public String getUserId(){
+        return this.user_id;
+    }
+    
     public String getFirstName(){
         return this.first_name;
     }

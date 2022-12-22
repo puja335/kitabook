@@ -260,6 +260,8 @@ public class TrendingScreen extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
+        addtolibrary atl = new addtolibrary();
+        atl.getClickedBookId("1");
         new addtolibrary().setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
 

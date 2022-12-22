@@ -36,10 +36,17 @@ public class UsersController {
     System.out.println(rs);
     try {
       while (rs.next()) {
+        String fetchedUserId = rs.getString("userid");
+        String fetchedFirstName = rs.getString("first_name");
+        String fetchedLastName = rs.getString("lastname");
+        String fetchedPhone = rs.getString("phonenumber");
         String fetchedUserName = rs.getString("username");
         String fetchedPassword = rs.getString("userpassword");
+        
         System.out.println(fetchedUserName + fetchedPassword);
         if (username.equals(fetchedUserName) && password.equals(fetchedPassword)) {
+           
+            Constraints.Constant.loggedInUser = new Users(fetchedUserId,fetchedFirstName,fetchedLastName,fetchedPhone,null);
           return true;
         }
       }

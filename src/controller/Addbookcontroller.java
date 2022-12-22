@@ -20,6 +20,7 @@ import model.Addbook;
 public class Addbookcontroller{
     DbConnection dbconnection;
 
+    
     public int insertbook(Addbook book){
         int book_id = book.getBook_id();
         String book_name = book.getBook_name();
