@@ -4,6 +4,8 @@
  */
 package view;
 
+import view.Search.Search;
+
 /**
  *
  * @author Dell
@@ -96,6 +98,11 @@ public class dashboard extends javax.swing.JFrame {
         jButton3.setBorder(null);
         jButton3.setBorderPainted(false);
         jButton3.setContentAreaFilled(false);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setBackground(new java.awt.Color(251, 211, 174));
         jButton4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -353,7 +360,7 @@ public class dashboard extends javax.swing.JFrame {
                                                 .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(51, 51, 51)
                                                 .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(0, 0, Short.MAX_VALUE)))
+                                                .addGap(0, 9, Short.MAX_VALUE)))
                                         .addGap(49, 49, 49)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -430,6 +437,8 @@ public class dashboard extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        dispose();
+        new Search().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
@@ -440,7 +449,7 @@ public class dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.bid = 1;
         new addtolibrary().setVisible(true);
-        this.setVisible(false);
+        this.setVisible(false); //display the another page set as visible
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void book1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_book1FocusGained
@@ -458,6 +467,11 @@ public class dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton10ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        new TrendingScreen().setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
