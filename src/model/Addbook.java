@@ -45,13 +45,11 @@ public class Addbook {
     public Addbook(
     String book_name,
     String author,
-    String genre,
     String pdf_link,
     String more
   ) {
     this.book_name = book_name;
     this.author = author;
-    this.genre = genre;
     this.pdf_link = pdf_link;
     this.more = more;
   }
@@ -78,14 +76,6 @@ public class Addbook {
 
     public void setAuthor(String author) {
         this.author = author;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
     }
 
     public String getPdf_link() {

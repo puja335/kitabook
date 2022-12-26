@@ -3,15 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Nihira%20Shrestha/Desktop/kitabook/src/view/profile.java</file>
+            <file>file:/C:/Users/Nihira%20Shrestha/Desktop/kitabook/src/model/Addbook.java</file>
             <file>file:/C:/Users/Nihira%20Shrestha/Desktop/kitabook/src/view/dashboard.java</file>
-            <file>file:/C:/Users/Nihira%20Shrestha/Desktop/kitabook/src/view/NewJFrame.java</file>
-            <file>file:/C:/Users/Nihira%20Shrestha/Desktop/kitabook/src/view/TrendingScreen.java</file>
+            <file>file:/C:/Users/Nihira%20Shrestha/Desktop/kitabook/src/view/profile.java</file>
             <file>file:/C:/Users/Nihira%20Shrestha/Desktop/kitabook/src/view/addtolibrary.java</file>
-            <file>file:/C:/Users/Nihira%20Shrestha/Desktop/kitabook/src/controller/libraryController.java</file>
             <file>file:/C:/Users/Nihira%20Shrestha/Desktop/kitabook/src/controller/UsersController.java</file>
             <file>file:/C:/Users/Nihira%20Shrestha/Desktop/kitabook/src/controller/Addbookcontroller.java</file>
+            <file>file:/C:/Users/Nihira%20Shrestha/Desktop/kitabook/src/view/OverviewScreen.java</file>
             <file>file:/C:/Users/Nihira%20Shrestha/Desktop/kitabook/src/Constraints/Constant.java</file>
+            <file>file:/C:/Users/Nihira%20Shrestha/Desktop/kitabook/src/view/LoginScreen.java</file>
         </group>
     </open-files>
 </project-private>
