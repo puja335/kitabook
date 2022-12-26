@@ -167,7 +167,7 @@ public class Update_details extends javax.swing.JFrame {
             }
         });
 
-        btn_search.setText("jButton6");
+        btn_search.setText("Search");
         btn_search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_searchActionPerformed(evt);

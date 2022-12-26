@@ -45,7 +45,7 @@ DbConnection dbconn;
         bookname = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tf_reports = new javax.swing.JTextArea();
+        tf_commentt = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
@@ -68,7 +68,7 @@ DbConnection dbconn;
             }
         });
 
-        bookname.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Click To Select Genre" }));
+        bookname.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select book name" }));
         bookname.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 booknameMouseClicked(evt);
@@ -85,10 +85,10 @@ DbConnection dbconn;
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Add comment");
 
-        tf_reports.setColumns(20);
-        tf_reports.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        tf_reports.setRows(5);
-        jScrollPane1.setViewportView(tf_reports);
+        tf_commentt.setColumns(20);
+        tf_commentt.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        tf_commentt.setRows(5);
+        jScrollPane1.setViewportView(tf_commentt);
 
         jLabel2.setFont(new java.awt.Font("Sitka Subheading", 1, 14)); // NOI18N
         jLabel2.setText("Book Name:");
@@ -233,7 +233,7 @@ DbConnection dbconn;
 
     private void btn_sendreportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sendreportsActionPerformed
 
-      String reporttext = tf_reports.getText();
+      String reporttext = tf_commentt.getText();
       String book_name=bookname.getSelectedItem().toString();
       try{
       Connection conn=DbConnection.getconnection();
@@ -340,37 +340,17 @@ DbConnection dbconn;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> bookname;
     private javax.swing.JButton btn_sendreports;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private java.awt.Label label1;
-    private javax.swing.JTextArea tf_reports;
+    private javax.swing.JTextArea tf_commentt;
     // End of variables declaration//GEN-END:variables
 }

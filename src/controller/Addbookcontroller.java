@@ -15,7 +15,7 @@
 package controller;
 import java.sql.*;
 
-import javax.swing.SpringLayout.Constraints;
+// import javax.swing.SpringLayout.Constraints;
 
 //import static Constraints.constant;
 //import Database.Dbconnection;
@@ -59,23 +59,23 @@ public class Addbookcontroller{
         );
         DbConnection dbConnection = new DbConnection();
         ResultSet rs = dbConnection.retrieve(selectQuery);
-        // try {
-        // while (rs.next()) {
-        //     String fetchedbookid = rs.getString(Constraints.Constant.DB_BOOK_ID);
-        //     String fetchedbookname = rs.getString(Constraints.constant.DB_BOOK_NAME);
-        //     String fetchedid = rs.getString(Constraints.Constant.DB_USER_ID);    
-        //     String fetchedfname = rs.getString(Constraints.Constant.DB_USER_ID);
-    //     //     String fetchedlname = rs.getString(Constraints.Constant.DB_USER_ID);
-    //     //     String fetchednumber = rs.getString(Constraints.Constant.DB_USER_ID);
+        try {
+        while (rs.next()) {
+            String fetchedbookid = rs.getString(Constraints.Constant.DB_BOOK_ID);
+            String fetchedbookname = rs.getString(Constraints.Constant.DB_BOOK_NAME);
+            String fetchedid = rs.getString(Constraints.Constant.DB_USER_ID);    
+            String fetchedfname = rs.getString(Constraints.Constant.DB_USER_ID);
+            String fetchedlname = rs.getString(Constraints.Constant.DB_USER_ID);
+            String fetchednumber = rs.getString(Constraints.Constant.DB_USER_ID);
 
-    //     // Constraints.constant.Books=new Addbook(fetchedid,fetchedbookname,fetchedlname,fetchednumber);
-    // }}
-    //     catch (Exception e) {
-    //   // TODO: handle exception
-    //   System.out.println("Error");
-    //   return false;
-    // }
-    return false;
+        // Constraints.constant.Books=new Addbook(fetchedid,fetchedbookname,fetchedlname,fetchednumber);
+    }}
+        catch (Exception e) {
+      // TODO: handle exception
+      System.out.println("Error");
+      return false;
+    }
+    // return false;
         
     
 
