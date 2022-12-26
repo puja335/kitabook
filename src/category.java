@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package view.category;
+//package view.categoryy;
 
 import database.DbConnection;
 import java.sql.Connection;
@@ -36,18 +36,14 @@ public class category extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        btn_fiction = new javax.swing.JButton();
-        btn_romance = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        btn_fantasy = new javax.swing.JButton();
         btn_thriller = new javax.swing.JButton();
-        btn_horror = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
         lbl_fiction = new javax.swing.JLabel();
-        lbl_horror = new javax.swing.JLabel();
-        lbl_romance = new javax.swing.JLabel();
-        lbl_thriller1 = new javax.swing.JLabel();
+        lbl_mystery = new javax.swing.JLabel();
         lbl_fantasy = new javax.swing.JLabel();
-        btn_fantasy1 = new javax.swing.JButton();
-        lbl_mystery1 = new javax.swing.JLabel();
-        btn_mystery1 = new javax.swing.JButton();
+        lbl_thriller1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
@@ -69,23 +65,23 @@ public class category extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(254, 242, 230));
         jPanel1.setLayout(null);
 
-        btn_fiction.setText("Fiction");
-        btn_fiction.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Fiction");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_fictionActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_fiction);
-        btn_fiction.setBounds(60, 271, 142, 23);
+        jPanel1.add(jButton1);
+        jButton1.setBounds(60, 271, 142, 23);
 
-        btn_romance.setText("Romance");
-        btn_romance.addActionListener(new java.awt.event.ActionListener() {
+        btn_fantasy.setText("Fantasy");
+        btn_fantasy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_romanceActionPerformed(evt);
+                btn_fantasyActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_romance);
-        btn_romance.setBounds(100, 940, 142, 23);
+        jPanel1.add(btn_fantasy);
+        btn_fantasy.setBounds(60, 600, 142, 23);
 
         btn_thriller.setText("Thriller");
         btn_thriller.addActionListener(new java.awt.event.ActionListener() {
@@ -96,58 +92,31 @@ public class category extends javax.swing.JFrame {
         jPanel1.add(btn_thriller);
         btn_thriller.setBounds(610, 270, 142, 23);
 
-        btn_horror.setText("Horror");
-        btn_horror.addActionListener(new java.awt.event.ActionListener() {
+        jButton7.setText("Mystery");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_horrorActionPerformed(evt);
+                jButton7ActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_horror);
-        btn_horror.setBounds(620, 920, 142, 23);
+        jPanel1.add(jButton7);
+        jButton7.setBounds(620, 600, 142, 23);
 
         lbl_fiction.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/category/Fiction.png"))); // NOI18N
         jPanel1.add(lbl_fiction);
         lbl_fiction.setBounds(34, 8, 225, 225);
 
-        lbl_horror.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/category/thriller.png"))); // NOI18N
-        jPanel1.add(lbl_horror);
-        lbl_horror.setBounds(580, 660, 220, 233);
-
-        lbl_romance.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/category/Cinema-Fantasy-icon.png"))); // NOI18N
-        lbl_romance.setText("jLabel3");
-        jPanel1.add(lbl_romance);
-        lbl_romance.setBounds(50, 670, 225, 243);
-
-        lbl_thriller1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/category/thriller.png"))); // NOI18N
-        jPanel1.add(lbl_thriller1);
-        lbl_thriller1.setBounds(570, 8, 220, 233);
+        lbl_mystery.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/category/thriller.png"))); // NOI18N
+        jPanel1.add(lbl_mystery);
+        lbl_mystery.setBounds(580, 350, 220, 233);
 
         lbl_fantasy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/category/Cinema-Fantasy-icon.png"))); // NOI18N
         lbl_fantasy.setText("jLabel3");
         jPanel1.add(lbl_fantasy);
         lbl_fantasy.setBounds(30, 340, 225, 243);
 
-        btn_fantasy1.setText("Fantasy");
-        btn_fantasy1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_fantasy1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btn_fantasy1);
-        btn_fantasy1.setBounds(60, 600, 142, 23);
-
-        lbl_mystery1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/category/thriller.png"))); // NOI18N
-        jPanel1.add(lbl_mystery1);
-        lbl_mystery1.setBounds(580, 350, 220, 233);
-
-        btn_mystery1.setText("Mystery");
-        btn_mystery1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_mystery1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btn_mystery1);
-        btn_mystery1.setBounds(620, 600, 142, 23);
+        lbl_thriller1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/category/thriller.png"))); // NOI18N
+        jPanel1.add(lbl_thriller1);
+        lbl_thriller1.setBounds(570, 8, 220, 233);
 
         jPanel3.setBackground(new java.awt.Color(249, 211, 173));
 
@@ -187,8 +156,11 @@ public class category extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(0, 0, 0)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addComponent(jLabel10))
@@ -206,7 +178,7 @@ public class category extends javax.swing.JFrame {
                 .addComponent(jButton4)
                 .addGap(99, 99, 99)
                 .addComponent(jButton5)
-                .addContainerGap(555, Short.MAX_VALUE))
+                .addContainerGap(226, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -216,12 +188,12 @@ public class category extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 979, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 957, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -234,7 +206,7 @@ public class category extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1132, Short.MAX_VALUE))
+                .addComponent(jScrollPane1))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -258,7 +230,7 @@ public class category extends javax.swing.JFrame {
         // ñTODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void btn_fictionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_fictionActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
     
         
@@ -308,9 +280,9 @@ public class category extends javax.swing.JFrame {
         
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_fictionActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void btn_romanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_romanceActionPerformed
+    private void btn_fantasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_fantasyActionPerformed
         // TODO add your handling code here:
         
              fantasy_table = new javax.swing.JTable();
@@ -322,7 +294,7 @@ public class category extends javax.swing.JFrame {
                 {null}
             },
             new String [] {
-                "Romance"
+                "Fiction"
             }
         ) {
             Class[] types = new Class [] {
@@ -342,7 +314,7 @@ public class category extends javax.swing.JFrame {
         });
         try{
             Connection conn=DbConnection.getconnection();
-            String query="select book_name from Addbook where gid='105' ";
+            String query="select book_name from Addbook where gid='103' ";
             PreparedStatement Fiction_pst=conn.prepareStatement(query);
             ResultSet Fiction_rst=Fiction_pst.executeQuery();
             fantasy_table.setModel(DbUtils.resultSetToTableModel(Fiction_rst));
@@ -350,14 +322,14 @@ public class category extends javax.swing.JFrame {
         }catch(SQLException e){
             System.out.println(e);
         }
-        fantasy_table.setBounds(50, 670, 225, 243);
-        jPanel1.remove(lbl_romance);
+        fantasy_table.setBounds(19, 300, 225, 243);
+        jPanel1.remove(lbl_fantasy);
         jPanel1.validate();
         jPanel1.add(fantasy_table);
         
         jPanel1.show();
         
-    }//GEN-LAST:event_btn_romanceActionPerformed
+    }//GEN-LAST:event_btn_fantasyActionPerformed
 
     private void jScrollPane1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jScrollPane1PropertyChange
 
@@ -397,7 +369,7 @@ public class category extends javax.swing.JFrame {
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
-    });
+        });
         try{
             Connection conn=DbConnection.getconnection();
             String query="select book_name from Addbook where gid='104' ";
@@ -409,14 +381,14 @@ public class category extends javax.swing.JFrame {
             System.out.println(e);
         }
         thriller_table.setBounds(570, 8, 220, 233);
-        jPanel1.remove(lbl_thriller1);
+        jPanel1.remove(lbl_mystery);
         jPanel1.validate();
         jPanel1.add(thriller_table);
         
         jPanel1.show();
     }//GEN-LAST:event_btn_thrillerActionPerformed
 
-    private void btn_horrorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_horrorActionPerformed
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
         
         mystery_table = new javax.swing.JTable();
@@ -429,102 +401,6 @@ public class category extends javax.swing.JFrame {
             },
             new String [] {
                 "Fiction"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        try{
-            Connection conn=DbConnection.getconnection();
-            String query="select book_name from Addbook where gid='106' ";
-            PreparedStatement Fiction_pst=conn.prepareStatement(query);
-            ResultSet Fiction_rst=Fiction_pst.executeQuery();
-            mystery_table.setModel(DbUtils.resultSetToTableModel(Fiction_rst));
-            
-        }catch(SQLException e){
-            System.out.println(e);
-        }
-        mystery_table.setBounds(580, 660, 220, 233);
-        jPanel1.remove(lbl_horror);
-        jPanel1.validate();
-        jPanel1.add(mystery_table);
-        
-        jPanel1.show();
-    }//GEN-LAST:event_btn_horrorActionPerformed
-
-    private void btn_fantasy1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_fantasy1ActionPerformed
-        // TODO add your handling code here:
-        mystery_table = new javax.swing.JTable();
-        mystery_table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null}
-            },
-            new String [] {
-                "Fiction"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        try{
-            Connection conn=DbConnection.getconnection();
-            String query="select book_name from Addbook where gid='103' ";
-            PreparedStatement Fiction_pst=conn.prepareStatement(query);
-            ResultSet Fiction_rst=Fiction_pst.executeQuery();
-            mystery_table.setModel(DbUtils.resultSetToTableModel(Fiction_rst));
-            
-        }catch(SQLException e){
-            System.out.println(e);
-        }
-        mystery_table.setBounds(30, 340, 225, 243);
-        jPanel1.remove(lbl_fantasy);
-        jPanel1.validate();
-        jPanel1.add(mystery_table);
-        
-        jPanel1.show();
-        
-    }//GEN-LAST:event_btn_fantasy1ActionPerformed
-
-    private void btn_mystery1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mystery1ActionPerformed
-        // TODO add your handling code here:
-        
-        mystery_table = new javax.swing.JTable();
-        mystery_table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null}
-            },
-            new String [] {
-                "Mystery"
             }
         ) {
             Class[] types = new Class [] {
@@ -553,13 +429,12 @@ public class category extends javax.swing.JFrame {
             System.out.println(e);
         }
         mystery_table.setBounds(580, 350, 220, 233);
-        jPanel1.remove(lbl_mystery1);
+        jPanel1.remove(lbl_mystery);
         jPanel1.validate();
         jPanel1.add(mystery_table);
         
         jPanel1.show();
-        
-    }//GEN-LAST:event_btn_mystery1ActionPerformed
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -597,15 +472,13 @@ public class category extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_fantasy1;
-    private javax.swing.JButton btn_fiction;
-    private javax.swing.JButton btn_horror;
-    private javax.swing.JButton btn_mystery1;
-    private javax.swing.JButton btn_romance;
+    private javax.swing.JButton btn_fantasy;
     private javax.swing.JButton btn_thriller;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -613,9 +486,7 @@ public class category extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl_fantasy;
     private javax.swing.JLabel lbl_fiction;
-    private javax.swing.JLabel lbl_horror;
-    private javax.swing.JLabel lbl_mystery1;
-    private javax.swing.JLabel lbl_romance;
+    private javax.swing.JLabel lbl_mystery;
     private javax.swing.JLabel lbl_thriller1;
     // End of variables declaration//GEN-END:variables
 
