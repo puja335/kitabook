@@ -14,7 +14,7 @@ import java.sql.SQLException;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import model.Addbook;
-import net.proteanit.sql.DbUtils;
+// import net.proteanit.sql.DbUtils;
 
 /**
  *
