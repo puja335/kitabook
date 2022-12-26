@@ -15,7 +15,7 @@ public class libraryController {
        DbConnection dbconnection;
        public int addToLibrary(){
 //        String firstname = users.getFirstName()
-        int uid = Constraints.Constant.loggedInUser.getUserId();
+        String uid = Constraints.Constant.loggedInUser.getUserId();
         dbconnection = new DbConnection();
         
         String insertQuery = String.format("INSERT INTO library(userid,book_id) VALUES('%d','%d')",uid);

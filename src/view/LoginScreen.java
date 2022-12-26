@@ -9,7 +9,6 @@ package view;
  *
  * @author binod
  */
-import Constraints.Constant;
 import controller.UsersController;
 import java .sql.*;
 import java.util.Objects;
@@ -22,6 +21,7 @@ import javax.swing.JOptionPane;
     public LoginScreen() {
         initComponents();
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,12 +33,10 @@ import javax.swing.JOptionPane;
 
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         tfUserName = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jPasswordField1 = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -47,15 +45,11 @@ import javax.swing.JOptionPane;
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(251, 239, 216));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1080, 650));
         jPanel1.setLayout(null);
 
         jPanel3.setBackground(new java.awt.Color(251, 211, 174));
         jPanel3.setForeground(new java.awt.Color(255, 153, 51));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Cutepuja.png"))); // NOI18N
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 260, 310));
+        jPanel3.setLayout(null);
 
         jPanel2.setBackground(new java.awt.Color(251, 211, 174));
 
@@ -64,9 +58,9 @@ import javax.swing.JOptionPane;
 
         tfUserName.setBorder(null);
         tfUserName.addFocusListener(new java.awt.event.FocusAdapter() {
-            // public void focusGained(java.awt.event.FocusEvent evt) {
-            //     tfUserNameFocusGained(evt);
-            // }
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tfUserNameFocusGained(evt);
+            }
         });
         tfUserName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,14 +78,6 @@ import javax.swing.JOptionPane;
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(251, 211, 174));
-        jButton2.setText("Change password?");
-        jButton2.setBorderPainted(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
         jLabel3.setText("Username:");
 
         jLabel4.setText("Password:");
@@ -145,7 +131,6 @@ import javax.swing.JOptionPane;
         );
 
         jPanel3.add(jPanel2);
-        jPanel2.setBounds(460, 30, 199, 303);
         jPanel2.setBounds(460, 30, 203, 302);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Cutepuja.png"))); // NOI18N
@@ -153,27 +138,27 @@ import javax.swing.JOptionPane;
         jLabel2.setBounds(80, 50, 260, 310);
 
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(160, 110, 700, 390);
+        jPanel3.setBounds(80, 110, 700, 390);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1092, Short.MAX_VALUE)
+            .addGap(0, 860, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1080, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 662, Short.MAX_VALUE)
+            .addGap(0, 590, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
@@ -186,32 +171,24 @@ import javax.swing.JOptionPane;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         String userName = tfUserName.getText();
-        String password = new String(jPasswordField1.getPassword());
+        String password = jPasswordField1.getText();
         UsersController uc = new UsersController();
      Boolean isLogin = uc.loginUser(userName, password);
     if(Objects.equals(Boolean.TRUE, isLogin)){
         //yetabata vopygarne
-        Constant.DB_Username = userName;
         new TrendingScreen().setVisible(true);
         this.setVisible(false);
     } else {
-//        JOptionPane.showMessageDialog(this,"Either email or password is invalid","Error" ,JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this,"Either email or password is invalid","Error" ,JOptionPane.ERROR_MESSAGE);
     }
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        new Reset().setVisible(true);
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void tfUserNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfUserNameFocusGained
         // TODO add your handling code here:
         tfUserName.setText("");
     }//GEN-LAST:event_tfUserNameFocusGained
-
 
     /**
      * @param args the command line arguments
@@ -250,7 +227,6 @@ import javax.swing.JOptionPane;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

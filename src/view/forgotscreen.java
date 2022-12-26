@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 public class forgotscreen extends javax.swing.JFrame {
 
     /**
-     * Creates new form forgotscreen
+     * Creates new form 
      */
     public forgotscreen() {
         initComponents();
