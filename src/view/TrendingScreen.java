@@ -1,4 +1,4 @@
-git /*
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
@@ -46,7 +46,7 @@ public class TrendingScreen extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(240, 219, 198));
         jPanel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -260,9 +260,9 @@ public class TrendingScreen extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-        addtolibrary atl = new addtolibrary();
-        atl.getClickedBookId("1");
-        new addtolibrary().setVisible(true);
+        bookDetails atl = new bookDetails();
+//        atl.getClickedBookId("1");
+        new bookDetails().setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

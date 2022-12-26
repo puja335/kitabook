@@ -60,7 +60,7 @@ public class UsersController {
           return true;
         }
       }
-    } catch (Exception e) {
+    }} catch (Exception e) {
       // TODO: handle exception
       System.out.println("Error");
       return false;

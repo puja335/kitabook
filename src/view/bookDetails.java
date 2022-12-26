@@ -4,6 +4,10 @@
  */
 package view;
 
+import Constraints.Constant;
+import database.DbConnection;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 
 /**
@@ -39,8 +43,8 @@ public class bookDetails extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        btnRating = new javax.swing.JButton();
+        ratingcombo = new javax.swing.JComboBox<>();
 
         jPanel1.setBackground(new java.awt.Color(235, 219, 203));
 
@@ -145,7 +149,7 @@ public class bookDetails extends javax.swing.JFrame {
                 .addComponent(jButton6)
                 .addGap(18, 18, 18)
                 .addComponent(jButton8)
-                .addContainerGap(163, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -160,23 +164,43 @@ public class bookDetails extends javax.swing.JFrame {
             }
         });
 
+        btnRating.setText("Add Rating");
+        btnRating.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRatingActionPerformed(evt);
+            }
+        });
+
+        ratingcombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
+        ratingcombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ratingcomboActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(100, 100, 100)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 207, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(81, 81, 81)
+                        .addComponent(btnRating)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(104, 104, 104))))
+                        .addGap(104, 104, 104))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(92, 92, 92)
+                        .addComponent(ratingcombo, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,8 +210,12 @@ public class bookDetails extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addGap(306, 306, 306)
+                .addComponent(ratingcombo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(btnRating))
                 .addGap(18, 18, 18))
         );
 
@@ -253,6 +281,44 @@ public class bookDetails extends javax.swing.JFrame {
 new ReportScreen().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void ratingcomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ratingcomboActionPerformed
+
+    }//GEN-LAST:event_ratingcomboActionPerformed
+
+    private void btnRatingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRatingActionPerformed
+        // TODO add your handling code here:
+         String rating_ = ratingcombo.getSelectedItem().toString();
+         int rating_no =Integer.parseInt(rating_);
+         int book_id=101;
+         int user_id=0;
+         if(Constant.loggedInUser !=null){
+         
+             String users=Constant.loggedInUser.getUserId();
+             user_id = Integer.parseInt(users);
+         
+         }
+      try{
+      Connection conn=DbConnection.getconnection();
+      String query="insert into rating_table(rating_count,book_name,username) value('"+rating_no+"',(select book_name from Addbook where GID='"+book_id+"'),(select username from users where userid='"+user_id+"'))";
+      
+      PreparedStatement pst=conn.prepareStatement(query);
+      int value=pst.executeUpdate();
+      if(value>0){
+          System.out.println("Rating Sent Successfully");
+          JOptionPane.showMessageDialog(null, "Rating submitted Successfully","Success",JOptionPane.INFORMATION_MESSAGE);
+
+      }else{
+          System.out.println("error");
+      }
+          
+          
+      
+      }catch(Exception e){
+          System.out.println("some error occured"+e);
+      
+      }
+    }//GEN-LAST:event_btnRatingActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -289,6 +355,7 @@ new ReportScreen().setVisible(true);        // TODO add your handling code here:
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnRating;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -300,5 +367,6 @@ new ReportScreen().setVisible(true);        // TODO add your handling code here:
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JComboBox<String> ratingcombo;
     // End of variables declaration//GEN-END:variables
 }
