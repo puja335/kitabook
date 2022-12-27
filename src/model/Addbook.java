@@ -54,6 +54,15 @@ public class Addbook {
     this.more = more;
   }
 
+        public Addbook(
+    String book_name,
+    String author
+  ) {
+    this.book_name = book_name;
+    this.author = author;
+
+  }
+    
     public int getBook_id() {
         return book_id;
     }

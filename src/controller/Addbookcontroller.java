@@ -17,7 +17,10 @@ import java.sql.*;
 //import static Constraints.constant;
 //import Database.Dbconnection;
 import database.DbConnection;
+import java.awt.print.Book;
+import java.util.ArrayList;
 import model.Addbook;
+import view.AddBook.AddBook;
 //import models.Student;
 public class Addbookcontroller{
     DbConnection dbconnection;
@@ -72,8 +75,20 @@ public class Addbookcontroller{
       return false;
     }
     return false;
-        
+    }
+           
+    public ResultSet fetchbook(){
+        String selectQuery = String.format(
+        "select book_id,book_name,author from Addbook"
+        );
+        DbConnection dbConnection = new DbConnection();
+        ResultSet rs = dbConnection.retrieve(selectQuery);
+        return rs;
+                    
+        }
     
+        
+        
+    }
 
     
-}
