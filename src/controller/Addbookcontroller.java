@@ -15,13 +15,10 @@
 package controller;
 import java.sql.*;
 
-import javax.swing.SpringLayout.Constraints;
 
-//import static Constraints.constant;
-//import Database.Dbconnection;
 import database.DbConnection;
 import model.Addbook;
-//import models.Student;
+import Constraints.Constant;
 public class Addbookcontroller{
     DbConnection dbconnection;
 
@@ -44,40 +41,39 @@ public class Addbookcontroller{
         int book_id = book.getBook_id();
         String book_name = book.getBook_name();
         String author = book.getAuthor();
-        String genre = book.getGenre();
         String pdf_link = book.getPdf_link();
         String more = book.getMore();
-        String updateQuery = String.format ("UPDATE tbl_student SET where book_id=%d, book_name='%s', author= '%s', genre='%s', pdf_link= '%s', more= '%s' ",book_id,book_name,author, genre,pdf_link, more);
+        String updateQuery = String.format ("UPDATE tbl_student SET where book_id=%d, book_name='%s', author= '%s', pdf_link= '%s', more= '%s' ",book_id,book_name,author ,pdf_link, more);
         dbconnection = new DbConnection();
         int result = dbconnection.manipulate(updateQuery);
         return result;
     }
     
-    public Boolean bookdetails(){
-        String selectQuery = String.format(
-        "select * from Addbook"
+    public Boolean bookdetails(int book_id){
+        String selectQuery;
+        selectQuery = String.format(
+                "select * from Addbook where book_id = %d",book_id
         );
         DbConnection dbConnection = new DbConnection();
         ResultSet rs = dbConnection.retrieve(selectQuery);
-        // try {
-        // while (rs.next()) {
-        //     String fetchedbookid = rs.getString(Constraints.Constant.DB_BOOK_ID);
-        //     String fetchedbookname = rs.getString(Constraints.constant.DB_BOOK_NAME);
-        //     String fetchedid = rs.getString(Constraints.Constant.DB_USER_ID);    
-        //     String fetchedfname = rs.getString(Constraints.Constant.DB_USER_ID);
-    //     //     String fetchedlname = rs.getString(Constraints.Constant.DB_USER_ID);
-    //     //     String fetchednumber = rs.getString(Constraints.Constant.DB_USER_ID);
-
-    //     // Constraints.constant.Books=new Addbook(fetchedid,fetchedbookname,fetchedlname,fetchednumber);
-    // }}
-    //     catch (Exception e) {
-    //   // TODO: handle exception
-    //   System.out.println("Error");
-    //   return false;
-    // }
+        try {
+        while (rs.next()) {
+            // int fetchedid = rs.getInt(Constraints.Constant.DB_USER_ID);    
+            String fetchedbookid = rs.getString(Constraints.Constant.DB_BOOK_ID);
+            String fetchedbookname = rs.getString(Constraints.Constant.DB_BOOK_NAME);
+            String fetchedauthor = rs.getString(Constraints.Constant.DB_AUTHOR);    
+            String fetchedmore = rs.getString(Constraints.Constant.DB_MORE);
+            String fetchedpdf = rs.getString(Constraints.Constant.DB_PDF);
+            Constraints.Constant.selectedBooks=new Addbook(fetchedbookid, fetchedbookname, fetchedauthor,fetchedmore,fetchedpdf);
+    }}
+        catch (Exception e) {
+      // TODO: handle exception
+      System.out.println("Error");
+      return false;
+    }
     return false;
         
     
 
     
-}}
+    }}
