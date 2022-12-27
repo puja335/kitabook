@@ -82,7 +82,7 @@
                                                   <Component id="jButton9" min="-2" pref="142" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                                                   <Component id="jButton10" min="-2" pref="133" max="-2" attributes="0"/>
-                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                  <EmptySpace min="0" pref="9" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
@@ -280,6 +280,9 @@
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton4">
               <Properties>
