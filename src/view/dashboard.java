@@ -449,7 +449,7 @@ public class dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.bid = 1;
         new addtolibrary().setVisible(true);
-        this.setVisible(false);
+        this.setVisible(false); //display the another page set as visible
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void book1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_book1FocusGained
