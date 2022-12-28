@@ -80,6 +80,11 @@ public class dashboard extends javax.swing.JFrame {
         jButton4.setBorder(null);
         jButton4.setBorderPainted(false);
         jButton4.setContentAreaFilled(false);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton12.setBackground(new java.awt.Color(251, 211, 174));
         jButton12.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -514,6 +519,10 @@ public class dashboard extends javax.swing.JFrame {
         new Search().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
