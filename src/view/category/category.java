@@ -115,7 +115,7 @@ public class category extends javax.swing.JFrame {
 
         lbl_fiction.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/category/Fiction.png"))); // NOI18N
         jPanel1.add(lbl_fiction);
-        lbl_fiction.setBounds(60, 30, 225, 210);
+        lbl_fiction.setBounds(50, 30, 225, 210);
 
         lbl_horror.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/category/thriller.png"))); // NOI18N
         jPanel1.add(lbl_horror);
