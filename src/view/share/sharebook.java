@@ -4,7 +4,10 @@
  */
 package view.share;
 
+import database.DbConnection;
+import java.sql.*;
 import javax.swing.JOptionPane;
+import net.proteanit.sql.DbUtils;
 import view.TrendingScreen;
 import view.dashboard;
 import view.landingScreen;
@@ -22,6 +25,9 @@ public class sharebook extends javax.swing.JFrame {
      */
     public sharebook() {
         initComponents();
+    }
+    public void viewlink(){
+        
     }
 
     /**
@@ -44,6 +50,8 @@ public class sharebook extends javax.swing.JFrame {
         jButton10 = new javax.swing.JButton();
         tf_search = new javax.swing.JTextField();
         search_btn = new javax.swing.JButton();
+        tf_pdflink = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -194,17 +202,26 @@ public class sharebook extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("pdf_link:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(145, 145, 145)
-                .addComponent(tf_search, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(search_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 206, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(145, 145, 145)
+                        .addComponent(tf_search, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(search_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(94, 94, 94)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(tf_pdflink, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 133, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,6 +231,10 @@ public class sharebook extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tf_search, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(search_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(142, 142, 142)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tf_pdflink, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -295,7 +316,7 @@ public class sharebook extends javax.swing.JFrame {
             String query="select Addbook.book_id ,Addbook.book_name as Book_Name, Addbook.pdf_link as PdfLink ,Addbook.author as Author,genre.genre from Addbook  left join genre on Addbook.gid=genre.gid where Addbook.book_name = '"+tf_search.getText()+"'";
             PreparedStatement pst=conn.prepareStatement(query);
             ResultSet rst=pst.executeQuery();
-            viewtable.setModel(DbUtils.resultSetToTableModel(rst));
+            viewlink.setModel(DbUtils.resultSetToTableModel(rst));
 
         }catch(SQLException e){
             System.out.println(e);
@@ -344,10 +365,12 @@ public class sharebook extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JButton search_btn;
+    private javax.swing.JTextField tf_pdflink;
     private javax.swing.JTextField tf_search;
     // End of variables declaration//GEN-END:variables
 }
