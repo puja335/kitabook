@@ -4,6 +4,7 @@
  */
 package view;
 
+import javax.swing.JOptionPane;
 import view.Search.Search;
 
 /**
@@ -103,6 +104,11 @@ public class commingsoon extends javax.swing.JFrame {
         jButton5.setBorder(null);
         jButton5.setBorderPainted(false);
         jButton5.setContentAreaFilled(false);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -248,6 +254,25 @@ public class commingsoon extends javax.swing.JFrame {
         new TrendingScreen().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        int n = JOptionPane.showConfirmDialog(  
+                null,
+                "Are you sure you want to logout?" ,
+                "Warning",
+                JOptionPane.YES_NO_OPTION);
+
+      if(n == JOptionPane.YES_OPTION)
+      {
+          new landingScreen().setVisible(true);
+        this.setVisible(false);
+      }
+      else
+      {
+          this.setVisible(true);
+      }
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
