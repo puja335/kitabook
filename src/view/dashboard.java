@@ -59,7 +59,7 @@ public class dashboard extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(251, 239, 216));
+        jPanel1.setBackground(new java.awt.Color(235, 219, 203));
         jPanel1.setPreferredSize(new java.awt.Dimension(1080, 650));
 
         jPanel2.setBackground(new java.awt.Color(218, 156, 125));
