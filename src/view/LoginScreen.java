@@ -176,7 +176,7 @@ import javax.swing.JOptionPane;
      Boolean isLogin = uc.loginUser(userName, password);
     if(Objects.equals(Boolean.TRUE, isLogin)){
         //yetabata vopygarne
-        new TrendingScreen().setVisible(true);
+        new dashboard().setVisible(true);
         this.setVisible(false);
     } else {
         JOptionPane.showMessageDialog(this,"Either email or password is invalid","Error" ,JOptionPane.ERROR_MESSAGE);
