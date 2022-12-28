@@ -8,6 +8,7 @@ import database.DbConnection;
 import java.sql.*;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
+import view.OverviewScreen;
 import view.TrendingScreen;
 import view.dashboard;
 import view.landingScreen;
@@ -283,6 +284,8 @@ public class sharebook extends javax.swing.JFrame {
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
+        new OverviewScreen().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
