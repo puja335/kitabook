@@ -68,21 +68,12 @@
                               <Component id="jButton10" min="-2" pref="145" max="-2" attributes="0"/>
                               <Component id="jButton8" min="-2" pref="145" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace min="207" pref="207" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace pref="13" max="32767" attributes="0"/>
-                                  <Component id="jTextField1" min="-2" pref="320" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="225" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="207" pref="207" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jButton9" alignment="0" min="-2" pref="145" max="-2" attributes="0"/>
-                                      <Component id="jButton11" min="-2" pref="145" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="jButton9" alignment="0" min="-2" pref="145" max="-2" attributes="0"/>
+                              <Component id="jButton11" min="-2" pref="145" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace pref="206" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -92,9 +83,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="jPanel2" alignment="0" pref="650" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                  <Component id="jTextField1" min="-2" pref="31" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -264,23 +253,6 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JTextField" name="jTextField1">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ae" green="d3" red="fb" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="5d" green="90" red="fb" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="                                        Search \ud83d\udd0d" containsInvalidXMLChars="true"/>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="null"/>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jTextField1FocusGained"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
