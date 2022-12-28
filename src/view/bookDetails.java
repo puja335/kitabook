@@ -3,17 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-
+//importing package 
 import Constraints.Constant;
 import database.DbConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Nihira Shrestha
- */
+
 public class bookDetails extends javax.swing.JFrame {
 
     /**
