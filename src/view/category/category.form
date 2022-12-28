@@ -180,12 +180,12 @@
                 <Component class="javax.swing.JLabel" name="lbl_thriller1">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/view/category/thriller.png"/>
+                      <Image iconType="3" name="/view/img/c_thriller.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="570" y="30" width="220" height="210"/>
+                      <AbsoluteConstraints x="600" y="60" width="150" height="190"/>
                     </Constraint>
                   </Constraints>
                 </Component>
