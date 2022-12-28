@@ -42,6 +42,8 @@ public class sharebook extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
+        tf_search = new javax.swing.JTextField();
+        search_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -169,17 +171,50 @@ public class sharebook extends javax.swing.JFrame {
                 .addContainerGap(98, Short.MAX_VALUE))
         );
 
+        tf_search.setBackground(new java.awt.Color(204, 204, 204));
+        tf_search.setText("                   Search for book");
+        tf_search.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tf_searchFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tf_searchFocusLost(evt);
+            }
+        });
+        tf_search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_searchActionPerformed(evt);
+            }
+        });
+
+        search_btn.setText("🔍");
+        search_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_btnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 616, Short.MAX_VALUE))
+                .addGap(145, 145, 145)
+                .addComponent(tf_search, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(search_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 206, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(84, 84, 84)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tf_search, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(search_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -241,6 +276,32 @@ public class sharebook extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton10ActionPerformed
 
+    private void tf_searchFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf_searchFocusGained
+        // TODO add your handling code here:
+        tf_search.setText("");
+    }//GEN-LAST:event_tf_searchFocusGained
+
+    private void tf_searchFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf_searchFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_searchFocusLost
+
+    private void tf_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_searchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_searchActionPerformed
+
+    private void search_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_btnActionPerformed
+        try{
+            Connection conn=DbConnection.getconnection();
+            String query="select Addbook.book_id ,Addbook.book_name as Book_Name, Addbook.pdf_link as PdfLink ,Addbook.author as Author,genre.genre from Addbook  left join genre on Addbook.gid=genre.gid where Addbook.book_name = '"+tf_search.getText()+"'";
+            PreparedStatement pst=conn.prepareStatement(query);
+            ResultSet rst=pst.executeQuery();
+            viewtable.setModel(DbUtils.resultSetToTableModel(rst));
+
+        }catch(SQLException e){
+            System.out.println(e);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_search_btnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -286,5 +347,7 @@ public class sharebook extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JButton search_btn;
+    private javax.swing.JTextField tf_search;
     // End of variables declaration//GEN-END:variables
 }
