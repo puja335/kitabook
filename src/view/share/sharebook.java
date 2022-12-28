@@ -202,6 +202,12 @@ public class sharebook extends javax.swing.JFrame {
             }
         });
 
+        tf_pdflink.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_pdflinkActionPerformed(evt);
+            }
+        });
+
         jLabel1.setText("pdf_link:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -313,15 +319,19 @@ public class sharebook extends javax.swing.JFrame {
     private void search_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_btnActionPerformed
         try{
             Connection conn=DbConnection.getconnection();
-            String query="select Addbook.book_id ,Addbook.book_name as Book_Name, Addbook.pdf_link as PdfLink ,Addbook.author as Author,genre.genre from Addbook  left join genre on Addbook.gid=genre.gid where Addbook.book_name = '"+tf_search.getText()+"'";
+            String query="select pdf_link from Addbook'"+tf_search.getText()+"'";
             PreparedStatement pst=conn.prepareStatement(query);
             ResultSet rst=pst.executeQuery();
-            viewlink.setModel(DbUtils.resultSetToTableModel(rst));
+            tf_pdflink.setText(rst.getString(4));
 
         }catch(SQLException e){
             System.out.println(e);
         }        // TODO add your handling code here:
     }//GEN-LAST:event_search_btnActionPerformed
+
+    private void tf_pdflinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_pdflinkActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_pdflinkActionPerformed
 
     /**
      * @param args the command line arguments
