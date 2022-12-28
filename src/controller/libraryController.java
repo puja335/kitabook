@@ -16,7 +16,6 @@ public class libraryController {
         String uid = Constraints.constant.loggedInUser.getUserId();
         userid = Integer.parseInt(uid);
         dbconnection = new DbConnection();
-        
         String insertQuery = String.format("INSERT INTO library(userid,book_id) VALUES('%d','%d')",userid);
           System.out.println(insertQuery);
         int result = dbconnection.manipulate(insertQuery);
