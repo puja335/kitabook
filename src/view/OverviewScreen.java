@@ -208,7 +208,7 @@ public class OverviewScreen extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/img/icon_contact.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/img/ICON_contact.png"))); // NOI18N
         jLabel4.setMinimumSize(new java.awt.Dimension(265, 239));
 
         jLabel6.setText("kulung.che14@gmail.com");
