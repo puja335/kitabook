@@ -5,12 +5,8 @@
 package view;
 
 import controller.RatingController;
-import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
-
 import controller.Addbookcontroller;
-import model.Addbook;
-import view.dashboard;
 /**
  *
  * @author Nihira Shrestha
@@ -337,7 +333,6 @@ public class addtolibrary extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-        System.out.print(dashboard.bid);
         Addbookcontroller b = new Addbookcontroller();
         b.bookdetails(dashboard.bid);
         String bookName = Constraints.constant.selectedBooks.getBook_name();

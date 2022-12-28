@@ -49,21 +49,19 @@ public class Addbookcontroller{
     }
     
     public Boolean bookdetails(int book_id){
+//        System.out.print(book_id);
         String selectQuery;
         selectQuery = String.format(
-                "select * from Addbook where book_id = %d",book_id
+                "select book_name,author,more  from Addbook where book_id = %d",book_id
         );
         DbConnection dbConnection = new DbConnection();
         ResultSet rs = dbConnection.retrieve(selectQuery);
         try {
         while (rs.next()) {
-
-            String fetchedbookid = rs.getString(Constraints.constant.DB_BOOK_ID);
             String fetchedbookname = rs.getString(Constraints.constant.DB_BOOK_NAME);
-            String fetchedid = rs.getString(Constraints.constant.DB_USER_ID);    
-            String fetchedfname = rs.getString(Constraints.constant.DB_USER_ID);
-            String fetchedpdf = rs.getString(Constraints.constant.DB_PDF);
-            Constraints.constant.selectedBooks=new Addbook(Integer.parseInt(fetchedid), fetchedbookname, Integer.parseInt(fetchedid),fetchedfname,fetchedpdf);
+            String fetchedauthor = rs.getString(Constraints.constant.DB_AUTHOR);
+            String fetchedmore = rs.getString(Constraints.constant.DB_MORE);
+            Constraints.constant.selectedBooks=new Addbook( fetchedbookname,fetchedauthor,fetchedmore);
     }}
         catch (Exception e) {
       // TODO: handle exception
@@ -71,7 +69,13 @@ public class Addbookcontroller{
     }
     return false;
         
-    
-
-    
-    }}
+    }
+    public ResultSet fetchbook(){
+        String selectQuery = String.format(
+        "select book_id,book_name,author from Addbook"
+        );
+        DbConnection dbConnection = new DbConnection();
+        ResultSet rs = dbConnection.retrieve(selectQuery);
+        return rs;
+                    
+        }}

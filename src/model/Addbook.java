@@ -63,15 +63,11 @@ public class Addbook {
     public Addbook(
     String book_name,
     String author,
-    String pdf_link, 
-    String more,
-    String gid
+    String more
             
   ) {
     this.book_name = book_name;
     this.author = author;
-    this.gid = gid;
-    this.pdf_link = pdf_link;
     this.more = more;
   }
 
