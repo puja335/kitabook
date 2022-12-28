@@ -156,12 +156,12 @@
                 <Component class="javax.swing.JLabel" name="lbl_horror">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/view/category/thriller.png"/>
+                      <Image iconType="3" name="/view/img/c_horror.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="580" y="660" width="220" height="-1"/>
+                      <AbsoluteConstraints x="620" y="700" width="160" height="200"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -217,12 +217,12 @@
                 <Component class="javax.swing.JLabel" name="lbl_mystery1">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/view/category/thriller.png"/>
+                      <Image iconType="3" name="/view/img/c_mystery.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="580" y="350" width="220" height="-1"/>
+                      <AbsoluteConstraints x="610" y="390" width="220" height="190"/>
                     </Constraint>
                   </Constraints>
                 </Component>

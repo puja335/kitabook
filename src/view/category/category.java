@@ -117,9 +117,9 @@ public class category extends javax.swing.JFrame {
         jPanel1.add(lbl_fiction);
         lbl_fiction.setBounds(40, 20, 225, 210);
 
-        lbl_horror.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/category/thriller.png"))); // NOI18N
+        lbl_horror.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/img/c_horror.png"))); // NOI18N
         jPanel1.add(lbl_horror);
-        lbl_horror.setBounds(580, 660, 220, 233);
+        lbl_horror.setBounds(620, 700, 160, 200);
 
         lbl_romance.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/img/c_romance.png"))); // NOI18N
         jPanel1.add(lbl_romance);
@@ -142,9 +142,9 @@ public class category extends javax.swing.JFrame {
         jPanel1.add(btn_fantasy1);
         btn_fantasy1.setBounds(90, 600, 142, 23);
 
-        lbl_mystery1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/category/thriller.png"))); // NOI18N
+        lbl_mystery1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/img/c_mystery.png"))); // NOI18N
         jPanel1.add(lbl_mystery1);
-        lbl_mystery1.setBounds(580, 350, 220, 233);
+        lbl_mystery1.setBounds(610, 390, 220, 190);
 
         btn_mystery1.setText("Mystery");
         btn_mystery1.addActionListener(new java.awt.event.ActionListener() {
