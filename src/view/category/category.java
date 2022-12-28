@@ -115,25 +115,23 @@ public class category extends javax.swing.JFrame {
 
         lbl_fiction.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/category/Fiction.png"))); // NOI18N
         jPanel1.add(lbl_fiction);
-        lbl_fiction.setBounds(50, 30, 225, 210);
+        lbl_fiction.setBounds(40, 20, 225, 210);
 
         lbl_horror.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/category/thriller.png"))); // NOI18N
         jPanel1.add(lbl_horror);
         lbl_horror.setBounds(580, 660, 220, 233);
 
-        lbl_romance.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/img/c_fantasy.png"))); // NOI18N
-        lbl_romance.setText("jLabel3");
+        lbl_romance.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/img/c_romance.png"))); // NOI18N
         jPanel1.add(lbl_romance);
-        lbl_romance.setBounds(50, 670, 225, 243);
+        lbl_romance.setBounds(90, 680, 225, 243);
 
         lbl_thriller1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/category/thriller.png"))); // NOI18N
         jPanel1.add(lbl_thriller1);
         lbl_thriller1.setBounds(570, 30, 220, 210);
 
-        lbl_fantasy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/img/c_fantasy.png"))); // NOI18N
-        lbl_fantasy.setText("jLabel3");
+        lbl_fantasy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/img/c_Fantasy.png"))); // NOI18N
         jPanel1.add(lbl_fantasy);
-        lbl_fantasy.setBounds(30, 340, 225, 243);
+        lbl_fantasy.setBounds(80, 340, 225, 243);
 
         btn_fantasy1.setText("Fantasy");
         btn_fantasy1.addActionListener(new java.awt.event.ActionListener() {
@@ -142,7 +140,7 @@ public class category extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btn_fantasy1);
-        btn_fantasy1.setBounds(60, 600, 142, 23);
+        btn_fantasy1.setBounds(90, 600, 142, 23);
 
         lbl_mystery1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/category/thriller.png"))); // NOI18N
         jPanel1.add(lbl_mystery1);
