@@ -45,7 +45,7 @@ public class commingsoon extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(235, 219, 203));
         jPanel1.setPreferredSize(new java.awt.Dimension(1080, 650));
 
-        jPanel2.setBackground(new java.awt.Color(251, 211, 174));
+        jPanel2.setBackground(new java.awt.Color(218, 156, 125));
         jPanel2.setPreferredSize(new java.awt.Dimension(237, 522));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
