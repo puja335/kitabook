@@ -7,6 +7,7 @@ package view;
 import controller.RatingController;
 import javax.swing.JOptionPane;
 import controller.Addbookcontroller;
+import controller.libraryController;
 /**
  *
  * @author Nihira Shrestha
@@ -267,14 +268,10 @@ public class addtolibrary extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
-        RatingController rc = new RatingController();
-        int result = rc.insertRating(Integer.parseInt(addtolibrary.bookId),Integer.parseInt(Constraints.constant.loggedInUser.getUserId()),Integer.parseInt(selectedNum));
-        if(result >0 ){
-        JOptionPane.showMessageDialog(this, "Rating Created Successfully", "Rating Inserted", JOptionPane.INFORMATION_MESSAGE);
-        } else {
-        JOptionPane.showMessageDialog(this, "Failed to add Rating ", "Error", JOptionPane.ERROR_MESSAGE);
-        }
+        String uid = Constraints.constant.loggedInUser.getUserId();
+        int ud = Integer.parseInt(uid);
+        libraryController ins = new libraryController();
+        ins.addToLibrary(ud, dashboard.bid);
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
