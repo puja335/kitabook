@@ -27,4 +27,5 @@ public class constant {
     public static String DB_PDF = "pdf_link";
    
     public static Addbook selectedBooks;
+    public static Addbook usersBooks;
 }

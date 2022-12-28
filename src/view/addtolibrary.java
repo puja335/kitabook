@@ -14,7 +14,6 @@ import controller.libraryController;
  */
 public class addtolibrary extends javax.swing.JFrame {
 
-    private String selectedNum;
     private static String bookId;
   
 
