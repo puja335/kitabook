@@ -70,7 +70,15 @@ public class Addbook {
     this.author = author;
     this.more = more;
   }
-
+    
+    public Addbook(
+    String book_name,
+    String pdf_link
+            
+  ) {
+    this.book_name = book_name;
+    this.pdf_link = pdf_link;
+  }
 
     public int getBook_id() {
         return book_id;

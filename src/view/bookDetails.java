@@ -5,6 +5,7 @@
 package view;
 
 import Constraints.constant;
+import controller.Addbookcontroller;
 import database.DbConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -37,11 +38,17 @@ public class bookDetails extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        bname = new javax.swing.JLabel();
+        pdf = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         btnRating = new javax.swing.JButton();
         ratingcombo = new javax.swing.JComboBox<>();
+
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(235, 219, 203));
 
@@ -149,10 +156,10 @@ public class bookDetails extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel2.setText("Thousand splendid suns");
+        bname.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        bname.setText("Thousand splendid suns");
 
-        jLabel3.setText("pdflink");
+        pdf.setText("pdflink");
 
         jButton1.setText("Add Report");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -185,10 +192,10 @@ public class bookDetails extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(100, 100, 100)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bname, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(pdf, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 227, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -205,9 +212,9 @@ public class bookDetails extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(121, 121, 121)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bname, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pdf, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(306, 306, 306)
                 .addComponent(ratingcombo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -319,6 +326,16 @@ new ReportScreen().setVisible(true);        // TODO add your handling code here:
       }
     }//GEN-LAST:event_btnRatingActionPerformed
 
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        Addbookcontroller b = new Addbookcontroller();
+        b.usersBook(dashboard.bid);
+        String bookName = Constraints.constant.usersBooks.getBook_name();
+        bname.setText(bookName);
+        String pdflink = Constraints.constant.usersBooks.getPdf_link();
+        pdf.setText(pdflink);
+    }//GEN-LAST:event_formWindowOpened
+
     /**
      * @param args the command line arguments
      */
@@ -355,6 +372,7 @@ new ReportScreen().setVisible(true);        // TODO add your handling code here:
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel bname;
     private javax.swing.JButton btnRating;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
@@ -363,10 +381,9 @@ new ReportScreen().setVisible(true);        // TODO add your handling code here:
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel pdf;
     private javax.swing.JComboBox<String> ratingcombo;
     // End of variables declaration//GEN-END:variables
 }

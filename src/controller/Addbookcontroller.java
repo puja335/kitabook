@@ -70,6 +70,28 @@ public class Addbookcontroller{
     return false;
         
     }
+    
+        public Boolean usersBook(int book_id){
+//        System.out.print(book_id);
+        String selectQuery;
+        selectQuery = String.format(
+                "select book_name,pdf_link  from Addbook where book_id = %d",book_id
+        );
+        DbConnection dbConnection = new DbConnection();
+        ResultSet rs = dbConnection.retrieve(selectQuery);
+        try {
+        while (rs.next()) {
+            String fetchedbookname = rs.getString(Constraints.constant.DB_BOOK_NAME);
+            String fetchedpdf = rs.getString(Constraints.constant.DB_PDF);
+            Constraints.constant.usersBooks=new Addbook( fetchedbookname,fetchedpdf);
+    }}
+        catch (Exception e) {
+      // TODO: handle exception
+      System.out.println("Error");
+    }
+    return false;
+        
+    }
     public ResultSet fetchbook(){
         String selectQuery = String.format(
         "select book_id,book_name,author from Addbook"
