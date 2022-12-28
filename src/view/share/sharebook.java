@@ -4,6 +4,13 @@
  */
 package view.share;
 
+import javax.swing.JOptionPane;
+import view.TrendingScreen;
+import view.dashboard;
+import view.landingScreen;
+import view.library;
+
+
 /**
  *
  * @author raich
