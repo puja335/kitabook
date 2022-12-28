@@ -84,7 +84,7 @@ public class category extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btn_fiction);
-        btn_fiction.setBounds(90, 260, 142, 23);
+        btn_fiction.setBounds(80, 260, 142, 23);
 
         btn_romance.setText("Romance");
         btn_romance.addActionListener(new java.awt.event.ActionListener() {
@@ -113,9 +113,9 @@ public class category extends javax.swing.JFrame {
         jPanel1.add(btn_horror);
         btn_horror.setBounds(620, 920, 142, 23);
 
-        lbl_fiction.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/category/Fiction.png"))); // NOI18N
+        lbl_fiction.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/img/c_fiction.png"))); // NOI18N
         jPanel1.add(lbl_fiction);
-        lbl_fiction.setBounds(40, 20, 225, 210);
+        lbl_fiction.setBounds(80, 80, 180, 170);
 
         lbl_horror.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/img/c_horror.png"))); // NOI18N
         jPanel1.add(lbl_horror);
