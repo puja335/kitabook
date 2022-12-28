@@ -57,12 +57,12 @@ public class signup extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(1080, 650));
 
-        jPanel2.setBackground(new java.awt.Color(251, 211, 174));
+        jPanel2.setBackground(new java.awt.Color(218, 156, 125));
 
         jLabel1.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
         jLabel1.setText("Signup");
 
-        tfFirstName.setBackground(new java.awt.Color(251, 211, 174));
+        tfFirstName.setBackground(new java.awt.Color(218, 156, 125));
         tfFirstName.setText("First name");
         tfFirstName.setBorder(null);
         tfFirstName.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -76,7 +76,7 @@ public class signup extends javax.swing.JFrame {
             }
         });
 
-        tfPhonenumber.setBackground(new java.awt.Color(251, 211, 174));
+        tfPhonenumber.setBackground(new java.awt.Color(218, 156, 125));
         tfPhonenumber.setText("Phone number");
         tfPhonenumber.setBorder(null);
         tfPhonenumber.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -90,7 +90,7 @@ public class signup extends javax.swing.JFrame {
             }
         });
 
-        tfusername.setBackground(new java.awt.Color(251, 211, 174));
+        tfusername.setBackground(new java.awt.Color(218, 156, 125));
         tfusername.setText("Username");
         tfusername.setBorder(null);
         tfusername.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -99,7 +99,7 @@ public class signup extends javax.swing.JFrame {
             }
         });
 
-        tfpassword.setBackground(new java.awt.Color(251, 211, 174));
+        tfpassword.setBackground(new java.awt.Color(218, 156, 125));
         tfpassword.setText("Password");
         tfpassword.setBorder(null);
         tfpassword.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -167,7 +167,7 @@ public class signup extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel2.setText("Already a member?");
 
-        jButton1.setBackground(new java.awt.Color(251, 211, 174));
+        jButton1.setBackground(new java.awt.Color(218, 156, 125));
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jButton1.setForeground(new java.awt.Color(251, 105, 40));
         jButton1.setText("Login");
@@ -189,7 +189,7 @@ public class signup extends javax.swing.JFrame {
             }
         });
 
-        tfconfpassword.setBackground(new java.awt.Color(251, 211, 174));
+        tfconfpassword.setBackground(new java.awt.Color(218, 156, 125));
         tfconfpassword.setText("Confirm password");
         tfconfpassword.setBorder(null);
         tfconfpassword.setPreferredSize(new java.awt.Dimension(65, 16));
@@ -216,7 +216,7 @@ public class signup extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/trees.png"))); // NOI18N
         jLabel3.setText("jLabel3");
 
-        tfLastName.setBackground(new java.awt.Color(251, 211, 174));
+        tfLastName.setBackground(new java.awt.Color(218, 156, 125));
         tfLastName.setText("Last name");
         tfLastName.setBorder(null);
         tfLastName.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -287,16 +287,14 @@ public class signup extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tfFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tfFirstName, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
                             .addComponent(tfLastName))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -341,7 +339,7 @@ public class signup extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(78, 78, 78)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
