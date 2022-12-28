@@ -180,7 +180,6 @@ public class signup extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(158, 91, 34));
         jButton2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Signup");
         jButton2.setBorder(null);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
