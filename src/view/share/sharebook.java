@@ -319,7 +319,7 @@ public class sharebook extends javax.swing.JFrame {
     private void search_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_btnActionPerformed
         try{
             Connection conn=DbConnection.getconnection();
-            String query="select pdf_link from Addbook'"+tf_search.getText()+"'";
+            String query="select * from Addbook";
             PreparedStatement pst=conn.prepareStatement(query);
             ResultSet rst=pst.executeQuery();
             tf_pdflink.setText(rst.getString(4));
