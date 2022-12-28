@@ -5,6 +5,7 @@
 package controller;
 
 import database.DbConnection;
+import model.Library;
 /**
  *
  * @author Nihira Shrestha
@@ -21,4 +22,16 @@ public class libraryController {
         int result = dbconnection.manipulate(insertQuery);
         return result;
       }
+        public int addtofav(Library library) {
+        int bookid = library.getBookId();
+        String book_name = library.getBookName();
+        String author_name = library.getAuthorName();
+        dbconnection = new DbConnection();
+        String insertQuery = String.format(
+        "INSERT INTO fav(bookid,book,author) VALUES(%d,'%s','%s')",bookid,
+        book_name, author_name);
+        System.out.println(insertQuery);
+        int result = dbconnection.manipulate(insertQuery);
+        return result;
+    }
 }
