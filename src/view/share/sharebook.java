@@ -319,11 +319,16 @@ public class sharebook extends javax.swing.JFrame {
     private void search_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_btnActionPerformed
         try{
             Connection conn=DbConnection.getconnection();
-            String query="select * from Addbook";
+            String query="select pdf_link from Addbook where book_name='"+tf_search.getText()+"'";
             PreparedStatement pst=conn.prepareStatement(query);
             ResultSet rst=pst.executeQuery();
-            tf_pdflink.setText(rst.getString(4));
+            while (rst.next()){
+                String item1=(rst.getString("pdf_link"));
 
+                    tf_pdflink.setText(item1);
+                    }
+//            viewtable.setModel(DbUtils.resultSetToTableModel(rst));
+            
         }catch(SQLException e){
             System.out.println(e);
         }        // TODO add your handling code here:
