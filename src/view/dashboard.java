@@ -33,10 +33,10 @@ public class dashboard extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         book1 = new javax.swing.JLabel();
@@ -80,13 +80,6 @@ public class dashboard extends javax.swing.JFrame {
         jButton4.setBorderPainted(false);
         jButton4.setContentAreaFilled(false);
 
-        jButton5.setBackground(new java.awt.Color(251, 211, 174));
-        jButton5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton5.setText("Logout");
-        jButton5.setBorder(null);
-        jButton5.setBorderPainted(false);
-        jButton5.setContentAreaFilled(false);
-
         jButton12.setBackground(new java.awt.Color(251, 211, 174));
         jButton12.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jButton12.setText("Home");
@@ -123,6 +116,18 @@ public class dashboard extends javax.swing.JFrame {
             }
         });
 
+        jButton13.setBackground(new java.awt.Color(251, 211, 174));
+        jButton13.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jButton13.setText("Logout");
+        jButton13.setBorder(null);
+        jButton13.setBorderPainted(false);
+        jButton13.setContentAreaFilled(false);
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -133,10 +138,10 @@ public class dashboard extends javax.swing.JFrame {
                         .addGap(42, 42, 42)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(57, 57, 57)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -155,9 +160,9 @@ public class dashboard extends javax.swing.JFrame {
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(140, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(146, Short.MAX_VALUE))
         );
 
         jTextField1.setBackground(new java.awt.Color(251, 211, 174));
@@ -491,6 +496,25 @@ public class dashboard extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+        int n = JOptionPane.showConfirmDialog(
+            null,
+            "Are you sure you want to logout?" ,
+            "Warning",
+            JOptionPane.YES_NO_OPTION);
+
+        if(n == JOptionPane.YES_OPTION)
+        {
+            new landingScreen().setVisible(true);
+            this.setVisible(false);
+        }
+        else
+        {
+            this.setVisible(true);
+        }
+    }//GEN-LAST:event_jButton13ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -531,10 +555,10 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
