@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package controller;
-import static Constraints.Constant.DB_Username;
+import static Constraints.constant.*;
 import database.DbConnection;
 import model.*;
 import java.sql.*;
@@ -36,31 +36,23 @@ public class UsersController {
     System.out.println(rs);
     try {
       while (rs.next()) {
-        String fetchedUserId = rs.getString("userid");
-        String fetchedFirstName = rs.getString("first_name");
-        String fetchedLastName = rs.getString("lastname");
-        String fetchedPhone = rs.getString("phonenumber");
         String fetchedUserName = rs.getString("username");
         String fetchedPassword = rs.getString("userpassword");
-        int fetchedid = rs.getInt(Constraints.Constant.DB_USER_ID);    
+        int fetchedid = rs.getInt(Constraints.constant.DB_USER_ID);    
         String fetchedfname = rs.getString("first_name");
         String fetchedlname = rs.getString("lastname");
         String fetchednumber = rs.getString("phonenumber");
         String fetched_user_name = rs.getString(DB_Username);
 
-        Constraints.Constant.loggedInUser=new Users(fetchedid,fetchedfname,fetchedlname,fetchednumber,fetched_user_name);
+        Constraints.constant.loggedInUser=new Users(fetchedid,fetchedfname,fetchedlname,fetchednumber,fetched_user_name);
         System.out.println(fetchedUserName + fetchedPassword);
         if (username.equals(fetchedUserName) && password.equals(fetchedPassword)) {
           // User loggedInUser = new User();
         
         System.out.println(fetchedUserName + fetchedPassword);
-        if (username.equals(fetchedUserName) && password.equals(fetchedPassword)) {
-           
-            Constraints.Constant.loggedInUser = new Users(fetchedUserId,fetchedFirstName,fetchedLastName,fetchedPhone,null);
-          return true;
         }
       }
-    }} catch (Exception e) {
+    } catch (Exception e) {
       // TODO: handle exception
       System.out.println("Error");
       return false;
@@ -83,7 +75,7 @@ public class UsersController {
     ResultSet rs = dbConnection.retrieve(selectQuery);
     try {
       while (rs.next()) {
-        String fetchednumber = rs.getString(Constraints.Constant.DB_PHONE_NUMBER);
+        String fetchednumber = rs.getString(Constraints.constant.DB_PHONE_NUMBER);
         if (pnumb.equals(fetchednumber)) {
           return 1;
         } else {
@@ -98,7 +90,13 @@ public class UsersController {
     }
       return 0;
         }
-        public ResultSet viewprofile(String usern){
+
+    /**
+     *
+     * @param usern
+     * @return
+     */
+    public ResultSet viewprofile(String usern){
             String selectQuery = String.format(
       "select first_name,lastname, username , phonenumber from users where username = '%s'",
      

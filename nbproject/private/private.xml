@@ -3,33 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/binod/Desktop/final_project/KitaBook/src/view/TrendingScreen.java</file>
-            <file>file:/C:/Users/binod/Desktop/final_project/KitaBook/src/view/ReportScreen.java</file>
-            <file>file:/C:/Users/raich/Desktop/Sem%20project/kitabook/src/view/LoginScreen.java</file>
+            <file>file:/C:/Users/raich/Desktop/Sem%20project/kitabook/src/view/ViewBookScreen.java</file>
             <file>file:/C:/Users/raich/Desktop/Sem%20project/kitabook/src/view/signup.java</file>
-            <file>file:/C:/Users/raich/Desktop/Sem%20project/kitabook/nbproject/private/private.xml</file>
+            <file>file:/C:/Users/raich/Desktop/Sem%20project/kitabook/src/view/OverviewScreen.java</file>
             <file>file:/C:/Users/raich/Desktop/Sem%20project/kitabook/nbproject/private/private.properties</file>
             <file>file:/C:/Users/raich/Desktop/Sem%20project/kitabook/src/view/review/commentt.java</file>
             <file>file:/C:/Users/raich/Desktop/Sem%20project/kitabook/src/category.java</file>
-            <file>file:/C:/Users/raich/Desktop/Sem%20project/kitabook/src/view/AddBook/AddBook.java</file>
-            <file>file:/C:/Users/raich/Desktop/Sem%20project/kitabook/src/view/share/sharebook.java</file>
-            <file>file:/C:/Users/raich/Desktop/Sem%20project/kitabook/src/view/category/category.java</file>
+            <file>file:/C:/Users/raich/Desktop/Sem%20project/kitabook/src/controller/Addbookcontroller.java</file>
+            <file>file:/C:/Users/raich/Desktop/Sem%20project/kitabook/src/view/addtolibrary.java</file>
             <file>file:/C:/Users/raich/Desktop/Sem%20project/kitabook/.gitignore</file>
-            <file>file:/C:/Users/binod/Desktop/final_project/KitaBook/src/database/DbConnection.java</file>
-            <file>file:/C:/Users/binod/Desktop/final_project/KitaBook/src/model/Users.java</file>
-            <file>file:/C:/Users/binod/Desktop/final_project/KitaBook/src/view/addtolibrary.java</file>
-            <file>file:/C:/Users/binod/Desktop/final_project/KitaBook/src/view/Reset.java</file>
-            <file>file:/C:/Users/binod/Desktop/final_project/KitaBook/src/view/bookDetails.java</file>
-            <file>file:/C:/Users/binod/Desktop/final_project/KitaBook/applet.policy</file>
-            <file>file:/C:/Users/binod/Desktop/final_project/KitaBook/src/view/forgotscreen.java</file>
-            <file>file:/C:/Users/binod/Desktop/final_project/KitaBook/src/view/LoginScreen.java</file>
-            <file>file:/C:/Users/binod/Desktop/final_project/KitaBook/src/view/giraffe.png</file>
-            <file>file:/C:/Users/binod/Desktop/final_project/KitaBook/src/view/addtolibrary.java</file>
-            <file>file:/C:/Users/binod/Desktop/final_project/KitaBook/src/view/ViewBookScreen.java</file>
-            <file>file:/C:/Users/binod/Desktop/final_project/KitaBook/src/controller/UsersController.java</file>
-            <file>file:/C:/Users/binod/Desktop/final_project/KitaBook/src/view/commingsoon.java</file>
-            <file>file:/C:/Users/binod/Desktop/final_project/KitaBook/src/view/bookDetails.java</file>
-            <file>file:/C:/Users/binod/Desktop/final_project/KitaBook/src/controller/libraryController.java</file>
+            <file>file:/C:/Users/raich/Desktop/Sem%20project/kitabook/src/view/bookDetails.java</file>
+            <file>file:/C:/Users/raich/Desktop/Sem%20project/kitabook/nbproject/private/private.xml</file>
+            <file>file:/C:/Users/raich/Desktop/Sem%20project/kitabook/src/view/Search/Search.java</file>
+            <file>file:/C:/Users/raich/Desktop/Sem%20project/kitabook/src/view/TrendingScreen.java</file>
+            <file>file:/C:/Users/raich/Desktop/Sem%20project/kitabook/src/model/Addbook.java</file>
+            <file>file:/C:/Users/raich/Desktop/Sem%20project/kitabook/src/model/Users.java</file>
+            <file>file:/C:/Users/raich/Desktop/Sem%20project/kitabook/src/model/review.java</file>
+            <file>file:/C:/Users/raich/Desktop/Sem%20project/kitabook/src/view/AddBook/AddBook.java</file>
+            <file>file:/C:/Users/raich/Desktop/Sem%20project/kitabook/src/view/category/category.java</file>
         </group>
     </open-files>
 </project-private>

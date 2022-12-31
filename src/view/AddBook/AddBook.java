@@ -14,7 +14,9 @@ import java.sql.SQLException;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import model.Addbook;
-import net.proteanit.sql.DbUtils;
+import view.Update_details.Update_details;
+import view.admin;
+// import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -51,7 +53,6 @@ public class AddBook extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -105,19 +106,10 @@ public class AddBook extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(245, 191, 139));
         jButton3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton3.setText("Home");
+        jButton3.setText("Update Details");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
-            }
-        });
-
-        jButton4.setBackground(new java.awt.Color(245, 191, 139));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton4.setText("My Profile");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
             }
         });
 
@@ -136,27 +128,24 @@ public class AddBook extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGap(18, 18, 18)
+                            .addComponent(jButton3)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
+                        .addGap(47, 47, 47)
                         .addComponent(jLabel10)))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addGap(78, 78, 78)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(93, 93, 93)
+                .addGap(90, 90, 90)
                 .addComponent(jButton3)
-                .addGap(93, 93, 93)
-                .addComponent(jButton4)
-                .addGap(93, 93, 93)
+                .addGap(94, 94, 94)
                 .addComponent(jButton5)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -206,7 +195,7 @@ public class AddBook extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addGap(40, 40, 40)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(more, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -229,15 +218,15 @@ public class AddBook extends javax.swing.JFrame {
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(pdflink, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabel2))
-                                        .addContainerGap(60, Short.MAX_VALUE))))))
+                                        .addContainerGap(24, Short.MAX_VALUE))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
+                        .addGap(175, 175, 175)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(141, 141, 141)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(275, 275, 275)
+                        .addGap(297, 297, 297)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblgenre, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -365,15 +354,17 @@ public class AddBook extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+        new Update_details().setVisible(true);
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // ñTODO add your handling code here:
+        new admin().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void pdflinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pdflinkActionPerformed
@@ -466,7 +457,6 @@ public class AddBook extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

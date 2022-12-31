@@ -8,6 +8,11 @@ import database.DbConnection;
 import java.sql.*;
 
 import javax.swing.JOptionPane;
+import net.proteanit.sql.DbUtils;
+import view.TrendingScreen;
+import view.dashboard;
+import view.landingScreen;
+import view.library;
 
 
 /**
@@ -16,8 +21,8 @@ import javax.swing.JOptionPane;
  */
 public class commentt extends javax.swing.JFrame {
     
-Connection conn;
-DbConnection dbconn;
+//Connection conn;
+//DbConnection dbconn;
 
     /**
      * Creates new form notice
@@ -25,6 +30,14 @@ DbConnection dbconn;
     public commentt() {
         initComponents();
         
+        
+    }
+    
+    /**
+     * Creates new form search
+     */
+
+    public void viewcommentt(){
         
     }
     
@@ -42,19 +55,29 @@ DbConnection dbconn;
         jPanel1 = new javax.swing.JPanel();
         label1 = new java.awt.Label();
         btn_sendreports = new javax.swing.JButton();
-        bookname = new javax.swing.JComboBox<>();
+        tf_bookname = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tf_commentt = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tbl_viewcomment = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(254, 242, 230));
 
@@ -68,15 +91,15 @@ DbConnection dbconn;
             }
         });
 
-        bookname.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select book name" }));
-        bookname.addMouseListener(new java.awt.event.MouseAdapter() {
+        tf_bookname.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select book name" }));
+        tf_bookname.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                booknameMouseClicked(evt);
+                tf_booknameMouseClicked(evt);
             }
         });
-        bookname.addActionListener(new java.awt.event.ActionListener() {
+        tf_bookname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                booknameActionPerformed(evt);
+                tf_booknameActionPerformed(evt);
             }
         });
 
@@ -93,82 +116,169 @@ DbConnection dbconn;
         jLabel2.setFont(new java.awt.Font("Sitka Subheading", 1, 14)); // NOI18N
         jLabel2.setText("Book Name:");
 
-        jPanel7.setBackground(new java.awt.Color(249, 211, 173));
+        jPanel4.setBackground(new java.awt.Color(218, 156, 125));
+        jPanel4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jLabel14.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        jLabel14.setText("Kitabook");
+        jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 29)); // NOI18N
+        jLabel3.setText("Kitabooks");
 
-        jButton15.setBackground(new java.awt.Color(245, 191, 139));
-        jButton15.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton15.setText("Home");
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
+        jButton5.setBackground(new java.awt.Color(218, 156, 125));
+        jButton5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton5.setText("Home");
+        jButton5.setBorder(null);
+        jButton5.setBorderPainted(false);
+        jButton5.setContentAreaFilled(false);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
+                jButton5ActionPerformed(evt);
             }
         });
 
-        jButton16.setBackground(new java.awt.Color(245, 191, 139));
-        jButton16.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton16.setText("My Profile");
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
+        jButton6.setBackground(new java.awt.Color(218, 156, 125));
+        jButton6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton6.setText("Library");
+        jButton6.setBorder(null);
+        jButton6.setBorderPainted(false);
+        jButton6.setContentAreaFilled(false);
+        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16ActionPerformed(evt);
+                jButton6ActionPerformed(evt);
             }
         });
 
-        jButton17.setBackground(new java.awt.Color(245, 191, 139));
-        jButton17.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton17.setText("Logout");
-        jButton17.addActionListener(new java.awt.event.ActionListener() {
+        jButton7.setBackground(new java.awt.Color(218, 156, 125));
+        jButton7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton7.setText("Trending");
+        jButton7.setBorder(null);
+        jButton7.setBorderPainted(false);
+        jButton7.setContentAreaFilled(false);
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton17ActionPerformed(evt);
+                jButton7ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(jLabel14)
-                .addContainerGap(47, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton16)
-                    .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15))
+        jButton8.setBackground(new java.awt.Color(218, 156, 125));
+        jButton8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton8.setText("Profile");
+        jButton8.setBorder(null);
+        jButton8.setBorderPainted(false);
+        jButton8.setContentAreaFilled(false);
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        jButton9.setBackground(new java.awt.Color(218, 156, 125));
+        jButton9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton9.setText("About us");
+        jButton9.setBorder(null);
+        jButton9.setBorderPainted(false);
+        jButton9.setContentAreaFilled(false);
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        jButton10.setBackground(new java.awt.Color(218, 156, 125));
+        jButton10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton10.setText("Logout");
+        jButton10.setBorder(null);
+        jButton10.setBorderPainted(false);
+        jButton10.setContentAreaFilled(false);
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton5)
+                .addGap(135, 135, 135))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(93, 93, 93)
-                .addComponent(jButton15)
-                .addGap(87, 87, 87)
-                .addComponent(jButton16)
-                .addGap(99, 99, 99)
-                .addComponent(jButton17)
-                .addContainerGap(107, Short.MAX_VALUE))
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(120, 120, 120)
+                .addComponent(jLabel3)
+                .addGap(97, 97, 97)
+                .addComponent(jButton5)
+                .addGap(18, 18, 18)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton7)
+                .addGap(27, 27, 27)
+                .addComponent(jButton8)
+                .addGap(20, 20, 20)
+                .addComponent(jButton9)
+                .addGap(18, 18, 18)
+                .addComponent(jButton10)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 169, Short.MAX_VALUE)
+            .addGap(0, 252, Short.MAX_VALUE)
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap()))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 624, Short.MAX_VALUE)
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel6Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
+
+        tbl_viewcomment.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Book_Name", "Comment"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(tbl_viewcomment);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -178,24 +288,31 @@ DbConnection dbconn;
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label1, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE))
+                        .addGap(129, 129, 129)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tf_bookname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(label1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(249, 249, 249)
+                        .addComponent(btn_sendreports, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(bookname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(79, 79, 79))
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(53, 53, 53))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(btn_sendreports, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(225, 225, 225))))))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(87, 87, 87))))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,15 +322,17 @@ DbConnection dbconn;
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(55, 55, 55)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(bookname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(59, 59, 59)
+                    .addComponent(tf_bookname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
+                .addGap(18, 18, 18)
                 .addComponent(btn_sendreports, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(125, Short.MAX_VALUE))
+                .addGap(50, 50, 50)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(60, Short.MAX_VALUE))
             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -233,8 +352,11 @@ DbConnection dbconn;
 
     private void btn_sendreportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sendreportsActionPerformed
 
+        // code to load data into table
+        // validation for not leave blank data.
+        
       String reporttext = tf_commentt.getText();
-      String book_name=bookname.getSelectedItem().toString();
+      String book_name=tf_bookname.getSelectedItem().toString();
       try{
       Connection conn=DbConnection.getconnection();
       String query="insert into comments(book_name,comments) value('"+book_name+"','"+reporttext+"')";
@@ -259,7 +381,7 @@ DbConnection dbconn;
       
     }//GEN-LAST:event_btn_sendreportsActionPerformed
 
-    private void booknameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_booknameMouseClicked
+    private void tf_booknameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tf_booknameMouseClicked
 
         try{
             
@@ -269,7 +391,7 @@ DbConnection dbconn;
             ResultSet rst=pst.executeQuery();
             while (rst.next()){
                 String item=(rst.getString("book_name"));
-                bookname.addItem(item);}
+                tf_bookname.addItem(item);}
             //            viewtable.setModel(DbUtils.resultSetToTableModel(rst));
 
         }catch(SQLException e){
@@ -277,27 +399,81 @@ DbConnection dbconn;
         }        // TODO add your handling code here:
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_booknameMouseClicked
+    }//GEN-LAST:event_tf_booknameMouseClicked
 
-    private void booknameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_booknameActionPerformed
+    private void tf_booknameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_booknameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_booknameActionPerformed
+    }//GEN-LAST:event_tf_booknameActionPerformed
 
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton15ActionPerformed
+        System.out.println("yo run bhayo");
+        try{
+            System.out.println("try ma aayo");
+            Connection conn=DbConnection.getconnection();
+            String query="select book_name, comments from comments";
+//            String query="select comments.book_name as Book_ Name, comments.comments as comment ";
 
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+            PreparedStatement pst=conn.prepareStatement(query);
+            ResultSet rst=pst.executeQuery();
+            System.out.println("aayo data -->"+rst);
+            tbl_viewcomment.setModel(DbUtils.resultSetToTableModel(rst));
+            
+        }catch(SQLException e){
+            System.out.println("catch ma aayo");
+            System.out.println(e);
+        }
+    }//GEN-LAST:event_formWindowOpened
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton16ActionPerformed
+        new dashboard().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
-        // ñTODO add your handling code here:
-    }//GEN-LAST:event_jButton17ActionPerformed
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        new library().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton6ActionPerformed
 
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        new TrendingScreen().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        int n = JOptionPane.showConfirmDialog(
+            null,
+            "Are you sure you want to logout?" ,
+            "Warning",
+            JOptionPane.YES_NO_OPTION);
+
+        if(n == JOptionPane.YES_OPTION)
+        {
+            new landingScreen().setVisible(true);
+            this.setVisible(false);
+        }
+        else
+        {
+            this.setVisible(true);
+        }
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton10ActionPerformed
+ 
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -338,19 +514,24 @@ DbConnection dbconn;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> bookname;
     private javax.swing.JButton btn_sendreports;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private java.awt.Label label1;
+    private javax.swing.JTable tbl_viewcomment;
+    private javax.swing.JComboBox<String> tf_bookname;
     private javax.swing.JTextArea tf_commentt;
     // End of variables declaration//GEN-END:variables
 }

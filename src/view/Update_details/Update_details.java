@@ -10,6 +10,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import view.AddBook.AddBook;
+import view.admin;
 
 /**
  *
@@ -37,12 +39,9 @@ public class Update_details extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         tf_bookname = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
         tf_more = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -62,19 +61,10 @@ public class Update_details extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(245, 191, 139));
         jButton3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton3.setText("Home");
+        jButton3.setText("Add Book");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
-            }
-        });
-
-        jButton4.setBackground(new java.awt.Color(245, 191, 139));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton4.setText("My Profile");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
             }
         });
 
@@ -92,30 +82,27 @@ public class Update_details extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGap(56, 56, 56)
-                            .addComponent(jLabel10))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGap(42, 42, 42)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addComponent(jLabel10)))
                 .addContainerGap(69, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addGap(89, 89, 89)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(91, 91, 91)
+                .addGap(113, 113, 113)
                 .addComponent(jButton3)
-                .addGap(95, 95, 95)
-                .addComponent(jButton4)
-                .addGap(91, 91, 91)
+                .addGap(87, 87, 87)
                 .addComponent(jButton5)
-                .addContainerGap(149, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         tf_bookname.addActionListener(new java.awt.event.ActionListener() {
@@ -126,9 +113,6 @@ public class Update_details extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
         jLabel1.setText("Name of book");
-
-        jLabel2.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
-        jLabel2.setText("Genre");
 
         tf_more.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -190,19 +174,13 @@ public class Update_details extends javax.swing.JFrame {
                         .addGap(100, 100, 100)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tf_more, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_bookname, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel3)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tf_bookname, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel3)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(tf_bookID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(26, 26, 26)
-                                        .addComponent(btn_search)))
-                                .addGap(71, 71, 71)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                .addComponent(tf_bookID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(26, 26, 26)
+                                .addComponent(btn_search)))))
                 .addContainerGap(105, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -214,20 +192,16 @@ public class Update_details extends javax.swing.JFrame {
                     .addComponent(tf_bookID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_search))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tf_bookname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(tf_bookname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(69, 69, 69)
                 .addComponent(jLabel3)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(tf_more, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(187, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -252,14 +226,14 @@ public class Update_details extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        new AddBook().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // ñTODO add your handling code here:
+        new admin().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void tf_booknameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_booknameActionPerformed
@@ -362,15 +336,12 @@ tf_bookID.setText("");        // TODO add your handling code here:
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField tf_bookID;
     private javax.swing.JTextField tf_bookname;
     private javax.swing.JTextField tf_more;

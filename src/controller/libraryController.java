@@ -6,7 +6,7 @@ package controller;
 
 import database.DbConnection;
 import model.Users;
-import Constraints.Constant.*;
+import Constraints.constant.*;
 /**
  *
  * @author Nihira Shrestha
@@ -15,7 +15,7 @@ public class libraryController {
        DbConnection dbconnection;
        public int addToLibrary(){
 //        String firstname = users.getFirstName()
-        String uid = Constraints.Constant.loggedInUser.getUserId();
+        String uid = Constraints.constant.loggedInUser.getUserId();
         dbconnection = new DbConnection();
         
         String insertQuery = String.format("INSERT INTO library(userid,book_id) VALUES('%d','%d')",uid);

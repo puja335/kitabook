@@ -18,9 +18,11 @@ package model;
 public class Addbook {
 
   private int book_id;
+  private int user_id;
+  private String first_name;
   private String book_name;
   private String author;
-  private String genre;
+//   private String genre;
   private String pdf_link;
   private String more;
   private String gid;
@@ -30,19 +32,34 @@ public class Addbook {
     int book_id,
     String book_name,
     String author,
-    String genre,
+    // String genre,
     String pdf_link,
     String more
   ) {
     this.book_id = book_id;
     this.book_name = book_name;
     this.author = author;
-    this.genre = genre;
+    // this.genre = genre;
     this.pdf_link = pdf_link;
     this.more = more;
   }
     
-    
+    public Addbook(
+    int book_id,
+    String book_name,
+    int userid,
+    // String genre,
+    String f_name,
+    String pdf_link
+
+  ) {
+    this.book_id = book_id;
+    this.book_name = book_name;
+    this.user_id = userid;
+    // this.genre = genre;
+    this.first_name = f_name;
+    this.pdf_link = pdf_link;
+  }
     public Addbook(
     String book_name,
     String author,
@@ -58,6 +75,7 @@ public class Addbook {
     this.more = more;
   }
 
+
     public int getBook_id() {
         return book_id;
     }
@@ -69,7 +87,7 @@ public class Addbook {
         return gid;
     }
 
-    public void gid(String gid) {
+    public void setgid(String gid) {
         this.gid = gid;
     }
 
@@ -89,14 +107,6 @@ public class Addbook {
         this.author = author;
     }
 
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
     public String getPdf_link() {
         return pdf_link;
     }
@@ -112,4 +122,21 @@ public class Addbook {
     public void setMore(String more) {
         this.more = more;
     }
+
+
+    public void setUserId(int user_id){
+        this.user_id = user_id;
+    }
+    
+    public void setFirstName(String FirstName){
+        this.first_name = FirstName;
+    }
+
+    public int getUserId(){
+        return this.user_id;
+    }
+    public String getFirstName(){
+        return this.first_name;
+    }
+      
 }
