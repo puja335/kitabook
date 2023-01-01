@@ -3,13 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-<<<<<<< HEAD
 
 import Constraints.constant;
-=======
-//importing package 
-import Constraints.Constant;
->>>>>>> 1d9bb07030009b66f926e9de46b6d4d9e3065492
 import database.DbConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

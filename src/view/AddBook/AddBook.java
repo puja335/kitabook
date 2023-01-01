@@ -67,7 +67,6 @@ public class AddBook extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
         jLabel1.setText("Book Name");
 
-        bookname.setText("Aaluu");
         bookname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 booknameActionPerformed(evt);
@@ -83,7 +82,6 @@ public class AddBook extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
         jLabel4.setText("More about book");
 
-        more.setText("Ekdam Khtra kitab ho");
         more.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 moreActionPerformed(evt);
@@ -96,7 +94,11 @@ public class AddBook extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
         jLabel6.setText("PDF Link");
 
-        author.setText("Divash");
+        author.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                authorActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(249, 211, 173));
         jPanel2.setForeground(new java.awt.Color(255, 204, 153));
@@ -128,10 +130,10 @@ public class AddBook extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGap(18, 18, 18)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton3)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(47, 47, 47)
@@ -166,7 +168,6 @@ public class AddBook extends javax.swing.JFrame {
             }
         });
 
-        pdflink.setText("http");
         pdflink.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pdflinkActionPerformed(evt);
@@ -415,6 +416,10 @@ public class AddBook extends javax.swing.JFrame {
                 lblgenre.setText("106");}
         // TODO add your handling code here:
     }//GEN-LAST:event_genre_ddMouseClicked
+
+    private void authorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_authorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_authorActionPerformed
 
     /**
      * @param args the command line arguments

@@ -8,14 +8,10 @@ import database.DbConnection;
 import java.sql.*;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
-<<<<<<< HEAD
 import view.TrendingScreen;
 import view.dashboard;
 import view.landingScreen;
 import view.library;
-=======
-import view.dashboard;
->>>>>>> 1d9bb07030009b66f926e9de46b6d4d9e3065492
 
 /**
  *
@@ -297,23 +293,6 @@ public class Search extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< HEAD
-=======
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        dispose();
-        new dashboard().setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // ñTODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
-
->>>>>>> 1d9bb07030009b66f926e9de46b6d4d9e3065492
     private void tf_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_searchActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_searchActionPerformed
